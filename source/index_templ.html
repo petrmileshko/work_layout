@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Краткое описание о чем сайт / страница">
+  <meta name="author" content="Автор контента страницы">
+  <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="website">
+  <meta property="og:title"
+    content="Заголовок страницы, выражающий ее основную тематику (можно одинаково с главным заголовком 1го уровня h1)">
+  <meta property="og:description" content="Краткое описание о чем сайт / страница">
+  <meta property="og:url" content="https://адрес-сайта.зона/">
+  <meta property="og:site_name" content="Краткое название сайта">
+  <meta property="og:image" content="https:/адрес-сайта.зона/img/фото.jpg">
+  <meta property="og:image:width" content="582">
+  <meta property="og:image:height" content="563">
+  <meta property="og:image:type" content="image/jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="canonical" href="https://адрес-сайта.зона/">
+  <link rel="icon" href="./favicon.ico">
+  <link rel="icon" href="./img/favicon/32.svg" type="image/svg+xml" sizes="any">
+  <link rel="apple-touch-icon" href="./img/favicon/180.png">
+  <link rel="manifest" href="./manifest.webmanifest">
+
+  <title>Название страницы во вкладке</title>
+  <link rel="stylesheet" href="./css/style.min.css?ver=1.0">
+
+  <link rel="preload" href="./fonts/open-sans-300.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/open-sans-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/open-sans-regular.woff2" as="font" type="font/woff2" crossorigin>
+</head>
+
+<body class="page__body">
+  <h1 class="visually-hidden">Заголовок страницы скрытый</h1>
+
+  <header class="page__header" id="top">
+
+    <nav class="navigation center-fixed">
+      <div class="navigation__wrapper">
+        <span class="logo">
+          <picture>
+            <source media="(min-width: 1200px)" srcset="./img/logo/header-desktop.svg">
+            <source media="(min-width: 768px)" srcset="./img/logo/header-tablet.svg">
+            <img class="logo__image" src="./img/logo/header-mobile.svg" alt="Логотип Pink">
+          </picture>
+        </span>
+
+        <button class="navigation__button button burger burger--nojs" type="button">
+          <span class="burger__icon">
+            <span class="button__text text visually-hidden">Меню</span>
+          </span>
+        </button>
+      </div>
+
+      <ul class="navigation__menu menu menu--nojs">
+        <li class="menu__item"><a class="menu__link menu__link--current text" href="#">Главная</a></li>
+        <li class="menu__item"><a class="menu__link text" href="#">Каталог</a></li>
+        <li class="menu__item"><a class="menu__link text" href="#">Корзина</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page__main index">
+    <header class="index__header hero">
+      <div class="hero__wrapper center-fixed">
+        <h2 class="hero__title">Заголовок первого блока (может быть заголовком страницы)</h2>
+        <p class="hero__slogan text">Призыв к действию</p>
+        <a class="hero__action button" href="#">Кнопка действия</a>
+      </div>
+    </header>
+
+    <section class="index__section testimonials">
+
+      <div class="testimonials__wrapper swiper center-fixed">
+        <h2 class="testimonials__title title">Озывы клиентов</h2>
+
+          <div class="testimonials__list swiper-wrapper">
+            <blockquote class="testimonials__item swiper-slide">
+              <picture>
+                <source type="image/webp" media="(min-width: 768px)"
+                  srcset="img/testimonials/tablet/testimonial-user1.webp 1x, img/testimonials/tablet/testimonial-user1@2x.webp 2x">
+                <source type="image/webp"
+                  srcset="img/testimonials/mobile/testimonial-user1.webp 1x, img/testimonials/mobile/testimonial-user1@2x.webp 2x">
+                <source media="(min-width: 768px)"
+                  srcset="img/testimonials/tablet/testimonial-user1.jpg 1x, img/testimonials/tablet/testimonial-user1@2x.jpg 2x">
+                <img class="testimonials__author-avatar" src="img/testimonials/mobile/testimonial-user1.jpg"
+                  srcset="img/testimonials/mobile/testimonial-user1@2x.jpg 2x" alt="Имя клиента" loading="lazy"
+                  decoding="async">
+              </picture>
+              <b class="testimonials__author text">Светлана Светлова</b>
+              <p class="testimonials__author-meta text">Информация об авторе</p>
+              <p class="testimonials__text text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium
+                illo
+                nobis vero omnis fugit possimus, expedita aut ipsam facere architecto dolorum a ratione ex molestias
+                excepturi ipsum autem fuga incidunt? Dolorem tenetur cupiditate quis tempora?</p>
+            </blockquote>
+            <blockquote class="testimonials__item swiper-slide">
+              <picture>
+                <source type="image/webp" media="(min-width: 768px)"
+                  srcset="img/testimonials/tablet/testimonial-user2.webp 1x, img/testimonials/tablet/testimonial-user2@2x.webp 2x">
+                <source type="image/webp"
+                  srcset="img/testimonials/mobile/testimonial-user2.webp 1x, img/testimonials/mobile/testimonial-user2@2x.webp 2x">
+                <source media="(min-width: 768px)"
+                  srcset="img/testimonials/tablet/testimonial-user2.jpg 1x, img/testimonials/tablet/testimonial-user2@2x.jpg 2x">
+                <img class="testimonials__author-avatar" src="img/testimonials/mobile/testimonial-user2.jpg"
+                  srcset="img/testimonials/mobile/testimonial-user2@2x.jpg 2x" alt="Имя клиента" loading="lazy"
+                  decoding="async">
+              </picture>
+              <b class="testimonials__author text">Борис Моисеев</b>
+              <p class="testimonials__author-meta text">Информация об авторе</p>
+              <p class="testimonials__text text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium
+                illo
+                nobis vero omnis fugit possimus, expedita aut ipsam facere architecto dolorum a ratione ex molestias
+                excepturi ipsum autem fuga incidunt? Dolorem tenetur cupiditate quis tempora?</p>
+            </blockquote>
+          </div>
+
+          <div class="swiper-pagination"></div>
+
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+
+      </div>
+    </section>
+
+    <footer class="index__footer contacts center-fixed">Колонтитул</footer>
+  </main>
+
+  <footer class="page__footer">
+    <a class="logo" href="#top">
+      <picture>
+        <source media="(min-width: 1200px)" srcset="./img/logo/footer-desktop.svg">
+        <source media="(min-width: 768px)" srcset="./img/logo/footer-tablet.svg">
+        <img class="logo__image" src="./img/logo/footer-mobile.svg" alt="Логотип Pink">
+      </picture>
+    </a>
+  </footer>
+
+  <script src="./js/app.min.js"></script>
+</body>
+
+</html>

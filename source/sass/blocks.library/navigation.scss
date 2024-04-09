@@ -1,0 +1,32 @@
+.navigation {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $min-tablet) {
+    flex-direction: row;
+  }
+}
+
+.navigation__wrapper {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.navigation__logo {
+  margin: 0;
+}
+
+.navigation__button {
+  margin-left: auto;
+}
+
+.navigation__menu {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: $min-desktop) {
+    width: auto;
+    margin-left: auto;
+  }
+}

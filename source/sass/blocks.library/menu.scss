@@ -1,0 +1,50 @@
+.menu {
+  display: none;
+  color: $menu-text;
+  background-color: inherit;
+  list-style-type: none;
+
+  &--nojs {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &--opened {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (min-width: $min-desktop) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.menu__item {
+  @media (min-width: $min-desktop) {
+    &:not(:last-of-type) {
+      margin-right: 20px;
+    }
+  }
+}
+
+.menu__link {
+  display: block;
+  padding: 10px 0;
+
+  @media (min-width: $min-desktop) {
+    position: relative;
+    padding: 5px 0;
+
+    &--current::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: $menu-current;
+      content: "";
+    }
+  }
+}

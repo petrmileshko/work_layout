@@ -1,0 +1,16 @@
+.hero {
+  background: $bg-hero;
+}
+
+.hero__wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__slogan {
+  margin: 0 0 20px 0;
+}
+
+.hero__action {
+  margin: 0;
+}
