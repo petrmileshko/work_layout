@@ -37,7 +37,7 @@
       <label class="form__label">
         <input type="password" name="userpass" placeholder="Ваш пароль" required>
       </label>
-      <button class="form__submit button" type="submit">
+      <button class="form__submit button button--submit" type="submit">
         <span class="button__text text visually-hidden">Далее</span>
         <svg class="button__icon" width="32" height="32" viewBox="0 0 32 32" focusable="false" aria-hidden="true">
           <use xlink:href="img/sprite.svg#login"></use>
@@ -52,7 +52,12 @@
         <span>Выслать новый пароль на:</span>
         <input type="text" name="usermail" placeholder="Ваша почта" required>
       </label>
-      <button class="form__submit button" type="submit">ОК</button>
+      <button class="form__submit button button--submit" type="submit">
+        <span class="button__text text visually-hidden">Отправить</span>
+        <svg class="button__icon" width="32" height="32" viewBox="0 0 32 32" focusable="false" aria-hidden="true">
+          <use xlink:href="img/sprite.svg#submit"></use>
+        </svg>
+      </button>
       <input type="hidden" name="form" value="restore">
     </form>
   </main>
