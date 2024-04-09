@@ -17,6 +17,7 @@
 @import "./blocks.library/button.scss";
 @import "./blocks.project/button.scss";
 @import "./blocks.library/text.scss";
+@import "./blocks.library/form.scss";
 
 //page layouts
 @import "./blocks.library/page.scss";
@@ -28,9 +29,6 @@
 @import "./blocks.library/burger.scss";
 @import "./blocks.library/menu.scss";
 //@import "./blocks.project/menu.scss";
-
-//main components
-@import "./blocks.library/hero.scss";
 
 //index page
 @import "./blocks.library/index.scss";

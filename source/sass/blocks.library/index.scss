@@ -4,13 +4,27 @@
 }
 
 .index__header {
-  margin-bottom: 60px;
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  grid-template-rows: min-content min-content;
 }
 
-.index__section {
-  margin-bottom: 60px;
+.index__brand {
+  grid-column: 2/ 3;
+  grid-row: 1 / 2;
+  margin-top: auto;
+  font-size: $title-mobile - 2;
+  line-height: normal;
 }
 
-.index__footer {
-  margin-bottom: 20px;
+.index__title {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  font-size: $headings-mobile;
+  line-height: normal;
+}
+
+.custom-logo-link {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
 }
