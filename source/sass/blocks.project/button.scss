@@ -13,5 +13,13 @@
 .button__icon {
   width: 34px;
   height: 34px;
-  color: #fff;
+  fill: $button-primary;
+
+  &:hover {
+    filter: drop-shadow();
+  }
+
+  &:active {
+    filter: drop-shadow();
+  }
 }
