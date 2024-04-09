@@ -13,6 +13,10 @@
     flex-direction: column;
     padding: 40px;
   }
+
+  &--hidden {
+    display: none;
+  }
 }
 
 .form__group {
@@ -40,10 +44,6 @@
 
   span {
     margin: auto 12px auto 0;
-  }
-
-  &:last-of-type {
-    margin-bottom: 0;
   }
 
   @media (min-width: $min-tablet) {
@@ -213,4 +213,10 @@
     margin-left: 0;
     width: 100%;
   }
+}
+
+.form__link {
+  margin-left: auto;
+  font: inherit;
+  color: inherit;
 }
