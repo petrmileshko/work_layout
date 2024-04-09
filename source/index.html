@@ -45,10 +45,12 @@
       </button>
       <input type="hidden" name="form" value="login">
       <a class="form__link" href="#restore">Забыли пароль?</a>
+      <p class="form__message form__message--error">
+        Учетные данные отсутсвуют </p>
     </form>
     <form class="form form--hidden" action="/" method="post" autocomplete="off" id="restore">
       <label class="form__label">
-        <span>Выслать новый пароль на:</span>
+        <p>Выслать новый пароль на:</p>
         <input class="form__input" type="text" name="usermail" placeholder="Ваша почта" required>
       </label>
       <button class="form__submit button button--submit" type="submit">
@@ -61,8 +63,8 @@
     </form>
   </main>
 
-  <footer class="page__footer page-footer">
-    <p class="page-footer__copyright center-fixed">
+  <footer class="page__footer page-footer center-fixed">
+    <p class="page-footer__copyright">
       &copy;work 2024 <em>&nbsp;&nbsp;Приложение в стадии разработки</em>
     </p>
   </footer>

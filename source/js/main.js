@@ -1,4 +1,4 @@
-import './ui/slider/slider.js';
+//import './ui/slider/slider.js';
 import clearNoJs from './utils/utils.js';
 import menuMobile from './menu/menu.js';
 
@@ -19,3 +19,5 @@ menuMobile({
   element: '.burger__icon',
   activation: 'burger__icon--opened'
 })();
+
+console.log('Бизнес процессы v1.0');
