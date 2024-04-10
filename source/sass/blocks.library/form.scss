@@ -6,12 +6,9 @@
   padding-top: 40px;
   padding-bottom: 40px;
 
-  animation-duration: 2s;
-  animation-name: formSlideIn;
-
-  &--send {
-    flex-direction: column;
-    padding: 40px;
+  &--animated {
+		animation-duration: 2s;
+		animation-name: formSlideIn;
   }
 
   &--hidden {
