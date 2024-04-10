@@ -30,7 +30,10 @@
 @import "./blocks.library/menu.scss";
 //@import "./blocks.project/menu.scss";
 
-//index page
+//Login page
 @import "./blocks.library/index.scss";
 @import "./blocks.project/index.scss";
 @import "./blocks.project/page-footer.scss";
+
+//Manager
+@import "./blocks.project/profile.scss";

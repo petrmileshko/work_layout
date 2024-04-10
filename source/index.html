@@ -17,56 +17,195 @@
   <link rel="preload" href="./fonts/open-sans-regular.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 
-<body class="page__body">
-  <main class="page__main index center-fixed">
-    <header class="index__header">
-      <a href="https://work.webpeternet.com/" class="custom-logo-link" rel="home" aria-current="page">
-        <img width="32" height="32" src="https://work.webpeternet.com/wp-content/uploads/2024/03/worklogo.svg"
-          class="custom-logo" alt="work" decoding="async" />
-      </a>
-      <strong class="index__brand">WORKPRO</strong>
-      <h1 class="index__title">Бизнес процессы</h1>
-    </header>
+<body class="page__body page__body--inner">
+  <header class="page__header" id="top">
+    <nav class="navigation center-fixed">
+      <div class="navigation__wrapper">
 
+        <a href="https://work.webpeternet.com/" class="custom-logo-link" rel="home" aria-current="page"><img width="32"
+            height="32" src="https://work.webpeternet.com/wp-content/uploads/2024/03/worklogo.svg" class="custom-logo"
+            alt="work" decoding="async" /></a>
 
-    <form class="form" action="/" method="post" autocomplete="off">
-      <p class="form__info">Используйте учетные данные от платформы</p>
+        <button class="navigation__button button burger burger--nojs" type="button">
+          <span class="burger__icon">
+            <span class="button__text text visually-hidden">Меню</span>
+          </span>
+        </button>
+      </div>
+
+      <ul class="navigation__menu menu menu--nojs">
+        <li class="menu__item"><a class="menu__link menu__link--current text" href="#reports">Отчеты</a></li>
+        <li class="menu__item"><a class="menu__link text" href="#update">Изменить</a></li>
+        <li class="menu__item"><a class="menu__link text" href="#lk">ЛК</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="page__main manager center-fixed" id="reports">
+    Иван Петров <form class="form" action="/#reports" method="post" autocomplete="off">
       <label class="form__label">
-        <input class="form__input" type="text" name="userlogin" placeholder="Ваш логин" required>
+        <time class="form__label" datetime="2024-04-10 10:04:17">10-04-2024</time>
+        <input type="hidden" name="report_date" value="2024-04-10 10:04:17">
       </label>
       <label class="form__label">
-        <input class="form__input" type="password" name="userpass" placeholder="Ваш пароль" required>
+        <span>Торговая точка:</span>
+        <select class="form__select" name="outlets_id">
+          <option value="1">ЧИЖИК</option>
+          <option value="2">ЧЕТВЕРОЧКА</option>
+          <option value="3">Пирожок</option>
+          <option value="4">Свежая булка</option>
+        </select>
       </label>
-      <button class="form__submit button button--submit" type="submit">
-        <span class="button__text text visually-hidden">Далее</span>
-        <svg class="button__icon">
-          <use xlink:href="img/sprite.svg#login"></use>
-        </svg>
+      <label class="form__label">
+        <span>Выручка:</span>
+        <input class="form__input" type="number" name="revenue" step="0.01" placeholder="Выручка" min="0" required>
+      </label>
+      <button class="form__submit button button--add" type="submit">
+        <span class="button__text text text--hidden">Добавить</span>
       </button>
-      <input type="hidden" name="form" value="login">
-      <a class="form__link" href="#restore">Забыли пароль?</a>
-      <p class="form__message form__message--error">
-        Учетные данные отсутсвуют </p>
+      <input type="hidden" name="form" value="manager">
+      <input type="hidden" name="user_id" value="2">
     </form>
-    <form class="form form--hidden" action="/" method="post" autocomplete="off" id="restore">
-      <label class="form__label">
-        <p>Выслать новый пароль на:</p>
-        <input class="form__input" type="text" name="usermail" placeholder="Ваша почта" required>
-      </label>
-      <button class="form__submit button button--submit" type="submit">
-        <span class="button__text text visually-hidden">Отправить</span>
-        <svg class="button__icon">
-          <use xlink:href="img/sprite.svg#submit"></use>
-        </svg>
+    <ul class="manager__reports reports">
+      <li class="reports__item report">
+        <time class="report__date" datetime="2024-04-08 12:04:07">08-04-2024&nbsp;&nbsp;</time>
+        <span class="report__outlets-name">ЧЕТВЕРОЧКА&nbsp;&nbsp;</span>
+        <address class="report__outlets-address">Таганрог, Чехова 1&nbsp;&nbsp;</address>
+        <span class="report__revenue">125 рублей</span>
+      </li>
+      <li class="reports__item report">
+        <time class="report__date" datetime="2024-04-04 17:52:01">04-04-2024&nbsp;&nbsp;</time>
+        <span class="report__outlets-name">ЧИЖИК&nbsp;&nbsp;</span>
+        <address class="report__outlets-address">МОСКВА, Товарная 34&nbsp;&nbsp;</address>
+        <span class="report__revenue">15 рублей</span>
+      </li>
+      <li class="reports__item report">
+        <time class="report__date" datetime="2024-04-04 17:52:01">04-04-2024&nbsp;&nbsp;</time>
+        <span class="report__outlets-name">ЧЕТВЕРОЧКА&nbsp;&nbsp;</span>
+        <address class="report__outlets-address">Таганрог, Чехова 1&nbsp;&nbsp;</address>
+        <span class="report__revenue">21 рубль</span>
+      </li>
+      <li class="reports__item report">
+        <time class="report__date" datetime="2024-04-02 17:57:22">02-04-2024&nbsp;&nbsp;</time>
+        <span class="report__outlets-name">Пирожок&nbsp;&nbsp;</span>
+        <address class="report__outlets-address">Таганрог, Ленина 10&nbsp;&nbsp;</address>
+        <span class="report__revenue">133 рубля</span>
+      </li>
+      <li class="reports__item report">
+        <time class="report__date" datetime="2024-03-20 18:05:09">20-03-2024&nbsp;&nbsp;</time>
+        <span class="report__outlets-name">Свежая булка&nbsp;&nbsp;</span>
+        <address class="report__outlets-address">Азов, Главная 45&nbsp;&nbsp;</address>
+        <span class="report__revenue">989.09 рублей</span>
+      </li>
+      <li class="reports__item report">
+        <time class="report__date" datetime="2024-01-23 08:04:57">23-01-2024&nbsp;&nbsp;</time>
+        <span class="report__outlets-name">Пирожок&nbsp;&nbsp;</span>
+        <address class="report__outlets-address">Таганрог, Ленина 10&nbsp;&nbsp;</address>
+        <span class="report__revenue">1056.78 рублей</span>
+      </li>
+      <li class="reports__item report">
+        <time class="report__date" datetime="2024-01-23 06:04:45">23-01-2024&nbsp;&nbsp;</time>
+        <span class="report__outlets-name">ЧИЖИК&nbsp;&nbsp;</span>
+        <address class="report__outlets-address">МОСКВА, Товарная 34&nbsp;&nbsp;</address>
+        <span class="report__revenue">0.5 рублей</span>
+      </li>
+    </ul>
+  </main>
+  <main class="page__main manager-update center-fixed" id="update">
+    <h2>Изменить отчеты за текущий месяц.</h2>
+    <p>Иван Петров</p>
+
+    <form class="form report" action="/#update" method="post" autocomplete="off">
+      <p class="report__item">
+        08-04-2024 </p>
+      <p class="report__item">
+        ЧЕТВЕРОЧКА </p>
+      <label class="report__item">
+        <input class="report__revenue" type="number" name="revenue" step="0.01" placeholder="Выручка" value="125"
+          min="0" required>
+        рублей </label>
+      <button class="report__submit button button--submit" type="submit">
+        <span class="button__text text text--hidden">Обновить</span>
       </button>
-      <input type="hidden" name="form" value="restore">
+      <input type="hidden" name="form" value="update">
+      <input type="hidden" name="id" value="15">
+    </form>
+    <form class="form report" action="/#update" method="post" autocomplete="off">
+      <p class="report__item">
+        04-04-2024 </p>
+      <p class="report__item">
+        ЧЕТВЕРОЧКА </p>
+      <label class="report__item">
+        <input class="report__revenue" type="number" name="revenue" step="0.01" placeholder="Выручка" value="21" min="0"
+          required>
+        рубль </label>
+      <button class="report__submit button button--submit" type="submit">
+        <span class="button__text text text--hidden">Обновить</span>
+      </button>
+      <input type="hidden" name="form" value="update">
+      <input type="hidden" name="id" value="1">
+    </form>
+    <form class="form report" action="/#update" method="post" autocomplete="off">
+      <p class="report__item">
+        04-04-2024 </p>
+      <p class="report__item">
+        ЧИЖИК </p>
+      <label class="report__item">
+        <input class="report__revenue" type="number" name="revenue" step="0.01" placeholder="Выручка" value="15" min="0"
+          required>
+        рублей </label>
+      <button class="report__submit button button--submit" type="submit">
+        <span class="button__text text text--hidden">Обновить</span>
+      </button>
+      <input type="hidden" name="form" value="update">
+      <input type="hidden" name="id" value="2">
+    </form>
+    <form class="form report" action="/#update" method="post" autocomplete="off">
+      <p class="report__item">
+        02-04-2024 </p>
+      <p class="report__item">
+        Пирожок </p>
+      <label class="report__item">
+        <input class="report__revenue" type="number" name="revenue" step="0.01" placeholder="Выручка" value="133"
+          min="0" required>
+        рубля </label>
+      <button class="report__submit button button--submit" type="submit">
+        <span class="button__text text text--hidden">Обновить</span>
+      </button>
+      <input type="hidden" name="form" value="update">
+      <input type="hidden" name="id" value="5">
     </form>
   </main>
 
-  <footer class="page__footer page-footer center-fixed">
-    <p class="page-footer__copyright">
-      &copy;work 2024 <em>&nbsp;&nbsp;Приложение в стадии разработки</em>
-    </p>
+  <main class="page__main profile center-fixed" id="lk">
+    <div class="profile__wrapper">
+      <p class="profile__data">
+        Логин:&nbsp;ivan </p>
+      <p class="profile__data">
+        Имя:&nbsp;Иван Петров </p>
+      <p class="profile__data">
+        Почта:&nbsp;ivan@mail.ru </p>
+    </div>
+    <form class="form" action="" method="post" autocomplete="off">
+      <button class="form__submit button button--close" type="submit">
+        <span class="button__text text visually-hidden">Выход</span>
+        <svg class="button__icon">
+          <use xlink:href="img/sprite.svg#logout"></use>
+        </svg>
+      </button>
+      <input type="hidden" name="form" value="logout">
+    </form>
+  </main>
+
+  <footer class="page__footer page-footer">
+    <div class="page-footer center-flexible">
+      <a href="https://work.webpeternet.com/" class="custom-logo-link" rel="home" aria-current="page"><img width="32"
+          height="32" src="https://work.webpeternet.com/wp-content/uploads/2024/03/worklogo.svg" class="custom-logo"
+          alt="work" decoding="async" /></a>
+      <p class="page-footer__copyright">
+        &copy;work 2024 &nbsp;&nbsp;<em>Вы зашли в систему как:</em>
+        <b>Менеджер</b>
+      </p>
+    </div>
   </footer>
   <script src="./js/app.min.js?ver=1.0.0"></script>
 </body>

@@ -1,4 +1,18 @@
 .page__body {
   display: grid;
   grid-template-rows: 1fr min-content;
+
+  &--inner {
+    grid-template-rows: min-content 1fr min-content;
+  }
+}
+
+.page__main {
+  display: none;
+
+  &:last-of-type {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }

@@ -51,11 +51,14 @@
   margin-bottom: 14px;
 
   span {
-    margin: auto 12px auto 0;
+    margin: 12px 0;
   }
 
   @media (min-width: $min-tablet) {
     margin-bottom: 20px;
+    span {
+      margin: 16px 0;
+    }
   }
 
   @media (min-width: $min-desktop) {
