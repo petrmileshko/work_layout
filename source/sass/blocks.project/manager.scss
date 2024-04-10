@@ -1,0 +1,13 @@
+.manager {
+  flex-direction: column;
+  align-items: center;
+}
+
+.manager__reports {
+  max-height: 35vh;
+  overflow: scroll;
+
+  @media (min-width: $min-tablet) {
+    max-height: 55vh;
+  }
+}

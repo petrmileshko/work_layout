@@ -1,0 +1,20 @@
+.report {
+  display: grid;
+  grid-template-columns: 1.2fr 1.5fr 2fr 1fr;
+}
+
+.report__date {
+  font-size: $font-size-mobile - 3;
+
+  @media (min-width: $min-tablet) {
+    font-size: $font-size-tablet;
+  }
+}
+
+.report__outlets-name {
+  text-transform: capitalize;
+}
+
+.report__outlets-address {
+  text-transform: capitalize;
+}
