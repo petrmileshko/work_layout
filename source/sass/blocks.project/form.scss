@@ -1,3 +1,29 @@
-.form__input {
-  text-transform: none;
+.form__input,
+.form__select {
+  &--revenue {
+    padding: 12px;
+  }
+
+  &::placeholder {
+    text-transform: none;
+  }
+}
+
+.form__label {
+  &--revenue {
+    max-width: 50%;
+    margin-bottom: 0;
+  }
+}
+
+.form__select {
+  text-transform: uppercase;
+}
+
+.form__text {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 10px;
 }

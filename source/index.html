@@ -34,33 +34,36 @@
       </div>
 
       <ul class="navigation__menu menu menu--nojs">
-        <li class="menu__item"><a class="menu__link menu__link--current text" href="#reports">Отчеты</a></li>
+        <li class="menu__item"><a class="menu__link text" href="#reports">Отчеты</a></li>
         <li class="menu__item"><a class="menu__link text" href="#update">Изменить</a></li>
-        <li class="menu__item"><a class="menu__link text" href="#lk">ЛК</a></li>
+        <li class="menu__item"><a class="menu__link menu__link--current text" href="#lk">ЛК</a></li>
       </ul>
     </nav>
   </header>
   <main class="page__main manager center-fixed" id="reports">
-    Иван Петров <form class="form" action="/#reports" method="post" autocomplete="off">
-      <label class="form__label">
-        <time class="form__label" datetime="2024-04-10 10:04:17">10-04-2024</time>
+   <form class="form" action="/#reports" method="post" autocomplete="off">
+      <p class="form__text">
+        <span>Сегодня: </span>
+        <time class="form__date" datetime="2024-04-10 10:04:17">10-04-2024</time>
         <input type="hidden" name="report_date" value="2024-04-10 10:04:17">
-      </label>
+      </p>
       <label class="form__label">
         <span>Торговая точка:</span>
-        <select class="form__select" name="outlets_id">
+        <select class="form__select form__select--revenue" name="outlets_id">
           <option value="1">ЧИЖИК</option>
           <option value="2">ЧЕТВЕРОЧКА</option>
           <option value="3">Пирожок</option>
           <option value="4">Свежая булка</option>
         </select>
       </label>
-      <label class="form__label">
-        <span>Выручка:</span>
-        <input class="form__input" type="number" name="revenue" step="0.01" placeholder="Выручка" min="0" required>
+      <label class="form__label form__label--revenue">
+        <input class="form__input form__input--revenue" type="number" name="revenue" step="0.01" placeholder="Выручка" min="0" required>
       </label>
       <button class="form__submit button button--add" type="submit">
-        <span class="button__text text text--hidden">Добавить</span>
+        <span class="button__text text visually-hidden">Добавить</span>
+        <svg class="button__icon button__icon--add">
+          <use xlink:href="img/sprite.svg#add-report"></use>
+        </svg>
       </button>
       <input type="hidden" name="form" value="manager">
       <input type="hidden" name="user_id" value="2">
@@ -179,11 +182,11 @@
   <main class="page__main profile center-fixed" id="lk">
     <div class="profile__wrapper">
       <p class="profile__data">
-        Логин:&nbsp;ivan </p>
+        <span>Логин:</span><span>ivan</span></p>
       <p class="profile__data">
-        Имя:&nbsp;Иван Петров </p>
+        <span>Имя:</span><span>Иван Петров</span></p>
       <p class="profile__data">
-        Почта:&nbsp;ivan@mail.ru </p>
+        <span>Почта:</span><span>ivan@mail.ru</span></p>
     </div>
     <form class="form" action="" method="post" autocomplete="off">
       <button class="form__submit button button--close" type="submit">

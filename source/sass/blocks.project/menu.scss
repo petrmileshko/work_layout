@@ -7,3 +7,13 @@
     border: none;
   }
 }
+
+.menu__link {
+  &:hover:not(.menu__link--current) {
+    color: $button-primary-hover;
+  }
+
+  &:active:not(.menu__link--current) {
+    color: $button-primary-active;
+  }
+}
