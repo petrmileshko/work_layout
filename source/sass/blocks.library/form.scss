@@ -188,9 +188,12 @@
   &--error {
     flex-grow: 1;
     width: 100%;
-    padding: 20px;
+    min-width: 280px;
+    padding: 20px 0;
     color: $message-error;
     text-transform: uppercase;
+    animation-duration: 2s;
+		animation-name: formSlideIn;
   }
 
   @media (min-width: $min-tablet) {
