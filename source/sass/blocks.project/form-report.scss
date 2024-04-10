@@ -1,0 +1,56 @@
+.form-report {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr 24px;
+  grid-auto-rows: auto;
+  column-gap: 10px;
+  row-gap: 10px;
+  padding: 0;
+  font-size: $font-size-mobile;
+
+  &:focus-within .button--save {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (min-width: $min-tablet) {
+    font-size: $font-size-desktop;
+    grid-template-columns: 2fr 2fr 1fr 46px;
+  }
+
+  @media (min-width: $min-desktop) {
+    grid-template-columns: 1fr 1fr 1fr 56px;
+  }
+}
+
+.form-report__revenue {
+  width: 50px;
+  font: inherit;
+  text-transform: initial;
+  color: inherit;
+  background-color: inherit;
+  border: 1px solid $input-form-border;
+  text-align: right;
+
+  @media (min-width: $min-tablet) {
+    width: 60px;
+  }
+
+  @media (min-width: $min-tablet) {
+    width: auto;
+    padding: 5px;
+  }
+}
+
+.form-report__item {
+  span {
+    display: none;
+  }
+
+  @media (min-width: $min-tablet) {
+    span {
+      display: inline-block;
+    }
+  }
+}

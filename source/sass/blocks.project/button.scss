@@ -7,6 +7,25 @@
     background-color: transparent;
   }
 
+  &--save {
+    display: none;
+    width: 24px;
+    height: 24px;
+    margin: auto;
+
+    @media (min-width: $min-tablet) {
+      width: 46px;
+      height: 46px;
+    }
+
+    @media (min-width: $min-tablet) {
+      width: 46px;
+      height: 46px;
+      margin: 0;
+      margin-right: auto;
+    }
+  }
+
   &--add {
     width: 44px;
     height: 44px;
@@ -17,6 +36,7 @@
       grid-row:  2 /3;
     }
   }
+
   cursor: pointer;
 }
 

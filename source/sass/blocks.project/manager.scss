@@ -6,6 +6,7 @@
 .manager__reports {
   max-height: 35vh;
   overflow: scroll;
+  overflow-x: hidden;
 
   @media (min-width: $min-tablet) {
     max-height: 55vh;
