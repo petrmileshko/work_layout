@@ -11,25 +11,27 @@ $bg-primary: #ffffff;
 $bg-secondary: #f2f2f2;
 $bg-inverted: #000000;
 $bg-header: #00000077;
+$bg-header: #283645;
 $bg-footer: #00000077;
 $bg-hero: #ffffff;
 
 // Фон кнопки
-$button-primary: #283645;
-$button-primary-border: #ffffff;
-$button-primary-hover: #ffffff;
-$button-primary-active: #2836456e;
+$button-primary: #ffffff;
+$button-primary-border: #fe401e;
+$button-primary-hover: #fe401e99;
+$button-primary-active: #fe401e61;
 $button-secondary: #ffffff;
 $button-secondary-border: #283645;
 $button-secondary-hover: #283645;
 $button-secondary-active: #ffffff99;
-$button-hero: transparent;
+$button-hero: #fe401e;
 $button-hero-border: #ffffff;
-$button-hero-hover: #ffffff;
-$button-hero-active: #ffffff6c;
+$button-hero-hover: #fe401e99;
+$button-hero-active: #fe401e61;
 $button-burger: #000000;
-$button-burger-hover: #e699ad;
-$button-burger-active: #e699ae61;
+$button-burger-opened: #ffffff;
+$button-burger-hover: #fe401e99;
+$button-burger-active: #fe401e61;
 
 // Цыет рамки полей ввода формы
 $input-border: #e5e5e5;
@@ -52,16 +54,29 @@ $links-secondary-active: #ffffff54;
 //Цвет текста пункта меню
 $menu-text: #000000;
 $menu-current: #000000;
-$menu-bg: #f2f2f2;
-$menu-hover: #d22856;
-$menu-active: rgba(210, 40, 86, 0.3);
+$menu-bg: #ffffff;
+$menu-bg-opened: #283645;
+$menu-socials: #fe401e;
+$menu-socials-hover: #fe401e99;
+$menu-socials-active: #fe401e4d;
+$menu-hover: #fe401e;
+$menu-active: #fe401e61;
 $menu-border-top: #000000;
 $menu-border-bottom: #00000059;
+
+//Цвет хлебные крошки
+$breadcrambs: #fe401e;
+$breadcrambs-hover: #fe401e99;
+$breadcrambs-active: #fe401e4d;
+
 
 //Цвет текста и рамки в таблице
 $table-text: #2f4052;
 $table-border: #e5e5e5;
 
-//Цвет рамки блока
-$border-primary: #283645;
-$border-secondary: #d22856;
+// Форма записи
+$message-success: #297700;
+$message-error: #ff009d;
+$input-form-border: #fe401e;
+$input-form-hover: #fe401e99;
+$input-form-active: #fe401e4d;

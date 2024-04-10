@@ -15,12 +15,13 @@
 @import "./blocks.library/center-flexible.scss"; // центровщик для резиновой верстки (не нужное закомментировать)
 @import "./blocks.library/visually-hidden.scss"; // паттерн для визуального скрытия элементов
 @import "./blocks.library/button.scss";
+@import "./blocks.project/button.scss";
 @import "./blocks.library/text.scss";
+@import "./blocks.library/form.scss";
 
 //page layouts
 @import "./blocks.library/page.scss";
 @import "./blocks.project/page.scss";
-@import "./blocks.library/swiper.scss";
 
 //header components
 @import "./blocks.library/navigation.scss";
@@ -29,9 +30,7 @@
 @import "./blocks.library/menu.scss";
 //@import "./blocks.project/menu.scss";
 
-//main components
-@import "./blocks.library/hero.scss";
-
 //index page
 @import "./blocks.library/index.scss";
-@import "./blocks.library/testimonials.scss";
+@import "./blocks.project/index.scss";
+@import "./blocks.project/page-footer.scss";
