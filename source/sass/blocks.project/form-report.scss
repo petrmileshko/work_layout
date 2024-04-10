@@ -9,9 +9,7 @@
   font-size: $font-size-mobile;
 
   &:focus-within .button--save {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    opacity: 1;
   }
 
   @media (min-width: $min-tablet) {
@@ -37,7 +35,7 @@
     width: 60px;
   }
 
-  @media (min-width: $min-tablet) {
+  @media (min-width: $min-desktop) {
     width: auto;
     padding: 5px;
   }

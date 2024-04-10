@@ -8,10 +8,14 @@
   }
 
   &--save {
-    display: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 24px;
     height: 24px;
     margin: auto;
+    opacity: 0;
+    transition: all 0.8s ease-in-out;
 
     @media (min-width: $min-tablet) {
       width: 46px;
