@@ -1,0 +1,23 @@
+.manager-update {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  max-height: 70vh;
+
+  @media (min-width: $min-tablet) {
+    max-height: 80vh;
+  }
+
+  @media (min-width: $min-tablet) {
+    max-height: 75vh;
+  }
+}
+
+.manager-update__title {
+  font-size: $headings-mobile;
+  line-height: normal;
+  margin-bottom: 40px;
+
+  @media (min-width: $min-tablet) {
+    margin-bottom: 60px;
+  }
+}

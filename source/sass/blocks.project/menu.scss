@@ -1,9 +1,22 @@
 
 .menu__item {
-  border-top: 1px solid $menu-border-top;
   border-bottom: 1px solid $menu-border-bottom;
 
-  @media (min-width: $min-tablet) {
+  @media (min-width: $min-desktop) {
     border: none;
+  }
+}
+
+.menu__link {
+  &:hover:not(.menu__link--current) {
+    color: $button-primary-hover;
+  }
+
+  &:active:not(.menu__link--current) {
+    color: $button-primary-active;
+  }
+
+  @media (min-width: $min-tablet) {
+    padding: 16px;
   }
 }

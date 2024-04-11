@@ -1,0 +1,23 @@
+.reports {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  font-size: $font-size-mobile - 2;
+
+  @media (min-width: $min-tablet) {
+    font-size: $font-size-tablet;
+  }
+}
+
+.reports__item {
+  width: 100%;
+  padding-bottom: 2px;
+  border-bottom: 1px solid $input-form-border;
+
+  &:not(:last-of-type) {
+    margin-bottom: 10px;
+  }
+}

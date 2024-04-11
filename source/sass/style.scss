@@ -19,6 +19,7 @@
 @import "./blocks.library/text.scss";
 @import "./blocks.library/form.scss";
 @import "./blocks.project/form.scss";
+@import "./blocks.project/form-report.scss";
 
 //page layouts
 @import "./blocks.library/page.scss";
@@ -27,9 +28,10 @@
 //header components
 @import "./blocks.library/navigation.scss";
 @import "./blocks.library/logo.scss";
+@import "./blocks.project/logo.scss";
 @import "./blocks.library/burger.scss";
 @import "./blocks.library/menu.scss";
-//@import "./blocks.project/menu.scss";
+@import "./blocks.project/menu.scss";
 
 //Login page
 @import "./blocks.library/index.scss";
@@ -38,3 +40,7 @@
 
 //Manager
 @import "./blocks.project/profile.scss";
+@import "./blocks.project/manager.scss";
+@import "./blocks.project/reports.scss";
+@import "./blocks.project/report.scss";
+@import "./blocks.project/manager-update.scss";

@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
 
-  @media (min-width: $min-tablet) {
+  @media (min-width: $min-desktop) {
     flex-direction: row;
   }
 }

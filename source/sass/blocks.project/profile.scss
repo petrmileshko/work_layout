@@ -3,5 +3,32 @@
 }
 
 .profile__wrapper {
-  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  width: 100%;
+
+  @media (min-width: $min-tablet) {
+    max-width: 500px;
+    min-width: 480px;
+    margin-bottom: 60px;
+  }
+}
+
+.profile__data {
+  display: flex;
+  justify-content: space-between;
+  font-size: $font-size-tablet;
+
+  &:not(:last-of-type) {
+    margin-bottom: 20px;
+  }
+
+  span:first-of-type {
+    color: $button-primary-border;
+  }
+
+  @media (min-width: $min-tablet) {
+    font-size: $font-size-desktop;
+  }
 }

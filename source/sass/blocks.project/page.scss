@@ -15,4 +15,19 @@
     flex-direction: column;
     align-items: center;
   }
+
+  &:target {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &:target ~ &:last-of-type {
+    display: none;
+  }
+}
+
+.page__header {
+  padding: 20px 0;
+  background-image: linear-gradient(to bottom, #B3E2ED 50%, #ffffff);
 }
