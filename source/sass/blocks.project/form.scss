@@ -11,6 +11,18 @@
       width: 100%;
     }
   }
+
+  &--sum {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+
+  &--managers {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
 }
 
 .form__input,
@@ -59,10 +71,62 @@
       }
     }
   }
+
+  &--managers {
+    margin-bottom: 0;
+
+    span {
+      display: none;
+      color: $input-form-border;
+    }
+
+    @media (min-width: $min-desktop) {
+      flex-direction: row;
+
+      span {
+        display: inline-block;
+      }
+
+      span:first-of-type {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &--sum {
+    margin-bottom: 0;
+
+    span {
+      display: none;
+      color: $input-form-border;
+    }
+
+    @media (min-width: $min-tablet) {
+      flex-direction: row;
+
+      span {
+        display: inline-block;
+      }
+    }
+
+    @media (min-width: $min-tablet) {
+      span:first-of-type {
+        margin-right: 10px;
+      }
+
+      span:last-of-type {
+        margin-left: 10px;
+      }
+    }
+  }
 }
 
 .form__select {
   text-transform: uppercase;
+
+  &[name=month] {
+    text-align: center;
+  }
 }
 
 .form__text {

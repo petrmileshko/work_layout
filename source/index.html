@@ -40,11 +40,11 @@
       </ul>
     </nav>
   </header>
-  <main class="page__main manager-summ" id="summary">
-    <h2>Сводный отчет за текущий 2024 год</h2>
-    <form class="form" action="" method="post" autocomplete="off">
+  <main class="page__main admin-summ center-fixed" id="summary">
+    <h2 class="admin-summ__title">Сводный отчет за текущий 2024 год</h2>
+    <form class="form form--sum" action="" method="post" autocomplete="off">
 
-      <label class="form__label">
+      <label class="form__label form__label--sum">
         <span>Всего за </span>
         <select class="form__select" name="month">
           <option value="all" selected>Все</option>
@@ -61,20 +61,23 @@
           <option value="11">Ноябрь</option>
           <option value="12">Декабрь</option>
         </select>
+        <span> месяцы</span>
       </label>
-      <button class="form__submit button button--filter" type="submit">
-        <span class="button__text text text--hidden">Выбрать</span>
-      </button>
-      <span> месяцы</span>
       <input type="hidden" name="form" value="summary">
+      <button class="form__submit button button--filter" type="submit">
+        <span class="button__text text visually-hidden">Выбрать</span>
+        <svg class="button__icon">
+          <use xlink:href="./img/sprite.svg#select-reports"></use>
+        </svg>
+      </button>
     </form>
-    <p class="manager-summ__value">
+    <p class="admin-summ__value">
       Выручка составила: 5879.15 рублей </p>
   </main>
-  <main class="page__main admin" id="reports">
-    Михаил Иванов <form class="form" action="" method="post" autocomplete="off">
+  <main class="page__main admin center-fixed" id="reports">
+    <form class="form form--managers" action="" method="post" autocomplete="off">
 
-      <label class="form__label">
+      <label class="form__label form__label--managers">
         <span>Менеджер:</span>
         <select class="form__select" name="user_id">
           <option value="all">Все</option>
@@ -83,8 +86,12 @@
           <option value="5">Василий Алибабаев</option>
         </select>
       </label>
+
       <button class="form__submit button button--filter" type="submit">
-        <span class="button__text text text--hidden">Выбрать</span>
+        <span class="button__text text visually-hidden">Выбрать</span>
+        <svg class="button__icon">
+          <use xlink:href="./img/sprite.svg#select-manager"></use>
+        </svg>
       </button>
       <input type="hidden" name="form" value="admin">
     </form>
@@ -191,6 +198,54 @@
         <address class="report__outlets-address">МОСКВА, Товарная 34&nbsp;&nbsp;</address>
         <span class="report__revenue">0.5 рублей</span>
       </li>
+      <li class="reports__item report">
+        <time class="report__date" datetime="2024-02-15 17:53:20">15-02-2024&nbsp;&nbsp;</time>
+        <span class="report__outlets-name">Пирожок&nbsp;&nbsp;</span>
+        <address class="report__outlets-address">Таганрог, Ленина 10&nbsp;&nbsp;</address>
+        <span class="report__revenue">20.5 рублей</span>
+      </li>
+      <li class="reports__item report">
+        <time class="report__date" datetime="2024-02-15 10:04:22">15-02-2024&nbsp;&nbsp;</time>
+        <span class="report__outlets-name">ЧИЖИК&nbsp;&nbsp;</span>
+        <address class="report__outlets-address">МОСКВА, Товарная 34&nbsp;&nbsp;</address>
+        <span class="report__revenue">1000 рублей</span>
+      </li>
+      <li class="reports__item report">
+        <time class="report__date" datetime="2024-01-23 08:04:57">23-01-2024&nbsp;&nbsp;</time>
+        <span class="report__outlets-name">Пирожок&nbsp;&nbsp;</span>
+        <address class="report__outlets-address">Таганрог, Ленина 10&nbsp;&nbsp;</address>
+        <span class="report__revenue">1056.78 рублей</span>
+      </li>
+      <li class="reports__item report">
+        <time class="report__date" datetime="2024-01-23 06:04:45">23-01-2024&nbsp;&nbsp;</time>
+        <span class="report__outlets-name">ЧИЖИК&nbsp;&nbsp;</span>
+        <address class="report__outlets-address">МОСКВА, Товарная 34&nbsp;&nbsp;</address>
+        <span class="report__revenue">0.5 рублей</span>
+      </li>
+      <li class="reports__item report">
+        <time class="report__date" datetime="2024-02-15 17:53:20">15-02-2024&nbsp;&nbsp;</time>
+        <span class="report__outlets-name">Пирожок&nbsp;&nbsp;</span>
+        <address class="report__outlets-address">Таганрог, Ленина 10&nbsp;&nbsp;</address>
+        <span class="report__revenue">20.5 рублей</span>
+      </li>
+      <li class="reports__item report">
+        <time class="report__date" datetime="2024-02-15 10:04:22">15-02-2024&nbsp;&nbsp;</time>
+        <span class="report__outlets-name">ЧИЖИК&nbsp;&nbsp;</span>
+        <address class="report__outlets-address">МОСКВА, Товарная 34&nbsp;&nbsp;</address>
+        <span class="report__revenue">1000 рублей</span>
+      </li>
+      <li class="reports__item report">
+        <time class="report__date" datetime="2024-01-23 08:04:57">23-01-2024&nbsp;&nbsp;</time>
+        <span class="report__outlets-name">Пирожок&nbsp;&nbsp;</span>
+        <address class="report__outlets-address">Таганрог, Ленина 10&nbsp;&nbsp;</address>
+        <span class="report__revenue">1056.78 рублей</span>
+      </li>
+      <li class="reports__item report">
+        <time class="report__date" datetime="2024-01-23 06:04:45">23-01-2024&nbsp;&nbsp;</time>
+        <span class="report__outlets-name">ЧИЖИК&nbsp;&nbsp;</span>
+        <address class="report__outlets-address">МОСКВА, Товарная 34&nbsp;&nbsp;</address>
+        <span class="report__revenue">0.5 рублей</span>
+      </li>
     </ul>
   </main>
   <main class="page__main profile center-fixed" id="lk">
@@ -209,7 +264,7 @@
       <button class="form__submit button button--close" type="submit">
         <span class="button__text text visually-hidden">Выход</span>
         <svg class="button__icon">
-          <use xlink:href="https://work.webpeternet.com/wp-content/themes/work/img/sprite.svg#exit"></use>
+          <use xlink:href="./img/sprite.svg#exit"></use>
         </svg>
       </button>
       <input type="hidden" name="form" value="logout">
