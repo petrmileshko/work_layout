@@ -35,51 +35,102 @@
 
       <ul class="navigation__menu menu menu--nojs">
         <li class="menu__item"><a class="menu__link text" href="#reports">Отчеты</a></li>
-        <li class="menu__item"><a class="menu__link text" href="#update">Изменить</a></li>
+        <li class="menu__item"><a class="menu__link text" href="#summary">Сводный</a></li>
         <li class="menu__item"><a class="menu__link menu__link--current text" href="#lk">ЛК</a></li>
       </ul>
     </nav>
   </header>
-  <main class="page__main manager center-fixed" id="reports">
-   <form class="form form--manager" action="/#reports" method="post" autocomplete="off">
-      <p class="form__text">
-        <span>Сегодня: </span>
-        <time class="form__date" datetime="2024-04-10 10:04:17">10-04-2024</time>
-        <input type="hidden" name="report_date" value="2024-04-10 10:04:17">
-      </p>
-      <label class="form__label form__label--select">
-        <span>Торговая точка:</span>
-        <select class="form__select form__select--revenue" name="outlets_id">
-          <option value="1">ЧИЖИК</option>
-          <option value="2">ЧЕТВЕРОЧКА</option>
-          <option value="3">Пирожок</option>
-          <option value="4">Свежая булка</option>
+  <main class="page__main admin-summ center-fixed" id="summary">
+    <h2 class="admin-summ__title">Сводный отчет за текущий 2024 год</h2>
+    <form class="form form--sum" action="" method="post" autocomplete="off">
+
+      <label class="form__label form__label--sum">
+        <span>Всего за </span>
+        <select class="form__select" name="month">
+          <option value="all" selected>Все</option>
+          <option value="1">Январь</option>
+          <option value="2">Февраль</option>
+          <option value="3">Март</option>
+          <option value="4">Апрель</option>
+          <option value="5">Май</option>
+          <option value="6">Июнь</option>
+          <option value="7">Июль</option>
+          <option value="8">Август</option>
+          <option value="9">Сентябрь</option>
+          <option value="10">Октябрь</option>
+          <option value="11">Ноябрь</option>
+          <option value="12">Декабрь</option>
         </select>
+        <span> месяцы</span>
       </label>
-      <label class="form__label form__label--revenue">
-        <input class="form__input form__input--revenue" type="number" name="revenue" step="0.01" placeholder="Выручка" min="0" required>
-      </label>
-      <button class="form__submit button button--add" type="submit">
-        <span class="button__text text visually-hidden">Добавить</span>
-        <svg class="button__icon button__icon--add">
-          <use xlink:href="img/sprite.svg#add-report"></use>
+      <input type="hidden" name="form" value="summary">
+      <button class="form__submit button button--filter" type="submit">
+        <span class="button__text text visually-hidden">Выбрать</span>
+        <svg class="button__icon">
+          <use xlink:href="./img/sprite.svg#select-reports"></use>
         </svg>
       </button>
-      <input type="hidden" name="form" value="manager">
-      <input type="hidden" name="user_id" value="2">
+    </form>
+    <p class="admin-summ__value">
+      Выручка составила: 5879.15 рублей </p>
+  </main>
+  <main class="page__main admin center-fixed" id="reports">
+    <form class="form form--managers" action="" method="post" autocomplete="off">
+
+      <label class="form__label form__label--managers">
+        <span>Менеджер:</span>
+        <select class="form__select" name="user_id">
+          <option value="all">Все</option>
+          <option value="3">Ирина Светлова</option>
+          <option value="2">Иван Петров</option>
+          <option value="5">Василий Алибабаев</option>
+        </select>
+      </label>
+
+      <button class="form__submit button button--filter" type="submit">
+        <span class="button__text text visually-hidden">Выбрать</span>
+        <svg class="button__icon">
+          <use xlink:href="./img/sprite.svg#select-manager"></use>
+        </svg>
+      </button>
+      <input type="hidden" name="form" value="admin">
     </form>
     <ul class="manager__reports reports">
+      <li class="reports__item report">
+        <time class="report__date" datetime="2024-04-11 04:04:37">11-04-2024&nbsp;&nbsp;</time>
+        <span class="report__outlets-name">Свежая булка&nbsp;&nbsp;</span>
+        <address class="report__outlets-address">Азов, Главная 45&nbsp;&nbsp;</address>
+        <span class="report__revenue">235.55 рублей</span>
+      </li>
+      <li class="reports__item report">
+        <time class="report__date" datetime="2024-04-10 03:04:39">10-04-2024&nbsp;&nbsp;</time>
+        <span class="report__outlets-name">ЧЕТВЕРОЧКА&nbsp;&nbsp;</span>
+        <address class="report__outlets-address">Таганрог, Чехова 1&nbsp;&nbsp;</address>
+        <span class="report__revenue">500 рублей</span>
+      </li>
+      <li class="reports__item report">
+        <time class="report__date" datetime="2024-04-08 12:04:48">08-04-2024&nbsp;&nbsp;</time>
+        <span class="report__outlets-name">Пирожок&nbsp;&nbsp;</span>
+        <address class="report__outlets-address">Таганрог, Ленина 10&nbsp;&nbsp;</address>
+        <span class="report__revenue">245 рублей</span>
+      </li>
       <li class="reports__item report">
         <time class="report__date" datetime="2024-04-08 12:04:07">08-04-2024&nbsp;&nbsp;</time>
         <span class="report__outlets-name">ЧЕТВЕРОЧКА&nbsp;&nbsp;</span>
         <address class="report__outlets-address">Таганрог, Чехова 1&nbsp;&nbsp;</address>
-        <span class="report__revenue">125 рублей</span>
+        <span class="report__revenue">110 рублей</span>
       </li>
       <li class="reports__item report">
-        <time class="report__date" datetime="2024-04-04 17:52:01">04-04-2024&nbsp;&nbsp;</time>
+        <time class="report__date" datetime="2024-04-04 18:06:11">04-04-2024&nbsp;&nbsp;</time>
         <span class="report__outlets-name">ЧИЖИК&nbsp;&nbsp;</span>
         <address class="report__outlets-address">МОСКВА, Товарная 34&nbsp;&nbsp;</address>
-        <span class="report__revenue">15 рублей</span>
+        <span class="report__revenue">1092 рубля</span>
+      </li>
+      <li class="reports__item report">
+        <time class="report__date" datetime="2024-04-04 17:53:20">04-04-2024&nbsp;&nbsp;</time>
+        <span class="report__outlets-name">Свежая булка&nbsp;&nbsp;</span>
+        <address class="report__outlets-address">Азов, Главная 45&nbsp;&nbsp;</address>
+        <span class="report__revenue">55 рублей</span>
       </li>
       <li class="reports__item report">
         <time class="report__date" datetime="2024-04-04 17:52:01">04-04-2024&nbsp;&nbsp;</time>
@@ -88,16 +139,52 @@
         <span class="report__revenue">21 рубль</span>
       </li>
       <li class="reports__item report">
+        <time class="report__date" datetime="2024-04-04 17:52:01">04-04-2024&nbsp;&nbsp;</time>
+        <span class="report__outlets-name">ЧИЖИК&nbsp;&nbsp;</span>
+        <address class="report__outlets-address">МОСКВА, Товарная 34&nbsp;&nbsp;</address>
+        <span class="report__revenue">15 рублей</span>
+      </li>
+      <li class="reports__item report">
         <time class="report__date" datetime="2024-04-02 17:57:22">02-04-2024&nbsp;&nbsp;</time>
         <span class="report__outlets-name">Пирожок&nbsp;&nbsp;</span>
         <address class="report__outlets-address">Таганрог, Ленина 10&nbsp;&nbsp;</address>
         <span class="report__revenue">133 рубля</span>
       </li>
       <li class="reports__item report">
+        <time class="report__date" datetime="2024-04-01 17:57:22">01-04-2024&nbsp;&nbsp;</time>
+        <span class="report__outlets-name">ЧЕТВЕРОЧКА&nbsp;&nbsp;</span>
+        <address class="report__outlets-address">Таганрог, Чехова 1&nbsp;&nbsp;</address>
+        <span class="report__revenue">200.4 рублей</span>
+      </li>
+      <li class="reports__item report">
         <time class="report__date" datetime="2024-03-20 18:05:09">20-03-2024&nbsp;&nbsp;</time>
         <span class="report__outlets-name">Свежая булка&nbsp;&nbsp;</span>
         <address class="report__outlets-address">Азов, Главная 45&nbsp;&nbsp;</address>
         <span class="report__revenue">989.09 рублей</span>
+      </li>
+      <li class="reports__item report">
+        <time class="report__date" datetime="2024-03-14 06:04:32">14-03-2024&nbsp;&nbsp;</time>
+        <span class="report__outlets-name">Свежая булка&nbsp;&nbsp;</span>
+        <address class="report__outlets-address">Азов, Главная 45&nbsp;&nbsp;</address>
+        <span class="report__revenue">1 рубль</span>
+      </li>
+      <li class="reports__item report">
+        <time class="report__date" datetime="2024-03-06 18:05:09">06-03-2024&nbsp;&nbsp;</time>
+        <span class="report__outlets-name">ЧИЖИК&nbsp;&nbsp;</span>
+        <address class="report__outlets-address">МОСКВА, Товарная 34&nbsp;&nbsp;</address>
+        <span class="report__revenue">204.33 рубля</span>
+      </li>
+      <li class="reports__item report">
+        <time class="report__date" datetime="2024-02-15 17:53:20">15-02-2024&nbsp;&nbsp;</time>
+        <span class="report__outlets-name">Пирожок&nbsp;&nbsp;</span>
+        <address class="report__outlets-address">Таганрог, Ленина 10&nbsp;&nbsp;</address>
+        <span class="report__revenue">20.5 рублей</span>
+      </li>
+      <li class="reports__item report">
+        <time class="report__date" datetime="2024-02-15 10:04:22">15-02-2024&nbsp;&nbsp;</time>
+        <span class="report__outlets-name">ЧИЖИК&nbsp;&nbsp;</span>
+        <address class="report__outlets-address">МОСКВА, Товарная 34&nbsp;&nbsp;</address>
+        <span class="report__revenue">1000 рублей</span>
       </li>
       <li class="reports__item report">
         <time class="report__date" datetime="2024-01-23 08:04:57">23-01-2024&nbsp;&nbsp;</time>
@@ -112,10 +199,16 @@
         <span class="report__revenue">0.5 рублей</span>
       </li>
       <li class="reports__item report">
-        <time class="report__date" datetime="2024-03-20 18:05:09">20-03-2024&nbsp;&nbsp;</time>
-        <span class="report__outlets-name">Свежая булка&nbsp;&nbsp;</span>
-        <address class="report__outlets-address">Азов, Главная 45&nbsp;&nbsp;</address>
-        <span class="report__revenue">989.09 рублей</span>
+        <time class="report__date" datetime="2024-02-15 17:53:20">15-02-2024&nbsp;&nbsp;</time>
+        <span class="report__outlets-name">Пирожок&nbsp;&nbsp;</span>
+        <address class="report__outlets-address">Таганрог, Ленина 10&nbsp;&nbsp;</address>
+        <span class="report__revenue">20.5 рублей</span>
+      </li>
+      <li class="reports__item report">
+        <time class="report__date" datetime="2024-02-15 10:04:22">15-02-2024&nbsp;&nbsp;</time>
+        <span class="report__outlets-name">ЧИЖИК&nbsp;&nbsp;</span>
+        <address class="report__outlets-address">МОСКВА, Товарная 34&nbsp;&nbsp;</address>
+        <span class="report__revenue">1000 рублей</span>
       </li>
       <li class="reports__item report">
         <time class="report__date" datetime="2024-01-23 08:04:57">23-01-2024&nbsp;&nbsp;</time>
@@ -130,64 +223,16 @@
         <span class="report__revenue">0.5 рублей</span>
       </li>
       <li class="reports__item report">
-        <time class="report__date" datetime="2024-03-20 18:05:09">20-03-2024&nbsp;&nbsp;</time>
-        <span class="report__outlets-name">Свежая булка&nbsp;&nbsp;</span>
-        <address class="report__outlets-address">Азов, Главная 45&nbsp;&nbsp;</address>
-        <span class="report__revenue">989.09 рублей</span>
-      </li>
-      <li class="reports__item report">
-        <time class="report__date" datetime="2024-01-23 08:04:57">23-01-2024&nbsp;&nbsp;</time>
+        <time class="report__date" datetime="2024-02-15 17:53:20">15-02-2024&nbsp;&nbsp;</time>
         <span class="report__outlets-name">Пирожок&nbsp;&nbsp;</span>
         <address class="report__outlets-address">Таганрог, Ленина 10&nbsp;&nbsp;</address>
-        <span class="report__revenue">1056.78 рублей</span>
+        <span class="report__revenue">20.5 рублей</span>
       </li>
       <li class="reports__item report">
-        <time class="report__date" datetime="2024-01-23 06:04:45">23-01-2024&nbsp;&nbsp;</time>
+        <time class="report__date" datetime="2024-02-15 10:04:22">15-02-2024&nbsp;&nbsp;</time>
         <span class="report__outlets-name">ЧИЖИК&nbsp;&nbsp;</span>
         <address class="report__outlets-address">МОСКВА, Товарная 34&nbsp;&nbsp;</address>
-        <span class="report__revenue">0.5 рублей</span>
-      </li>
-      <li class="reports__item report">
-        <time class="report__date" datetime="2024-03-20 18:05:09">20-03-2024&nbsp;&nbsp;</time>
-        <span class="report__outlets-name">Свежая булка&nbsp;&nbsp;</span>
-        <address class="report__outlets-address">Азов, Главная 45&nbsp;&nbsp;</address>
-        <span class="report__revenue">989.09 рублей</span>
-      </li>
-      <li class="reports__item report">
-        <time class="report__date" datetime="2024-01-23 08:04:57">23-01-2024&nbsp;&nbsp;</time>
-        <span class="report__outlets-name">Пирожок&nbsp;&nbsp;</span>
-        <address class="report__outlets-address">Таганрог, Ленина 10&nbsp;&nbsp;</address>
-        <span class="report__revenue">1056.78 рублей</span>
-      </li>
-      <li class="reports__item report">
-        <time class="report__date" datetime="2024-01-23 06:04:45">23-01-2024&nbsp;&nbsp;</time>
-        <span class="report__outlets-name">ЧИЖИК&nbsp;&nbsp;</span>
-        <address class="report__outlets-address">МОСКВА, Товарная 34&nbsp;&nbsp;</address>
-        <span class="report__revenue">0.5 рублей</span>
-      </li>
-      <li class="reports__item report">
-        <time class="report__date" datetime="2024-03-20 18:05:09">20-03-2024&nbsp;&nbsp;</time>
-        <span class="report__outlets-name">Свежая булка&nbsp;&nbsp;</span>
-        <address class="report__outlets-address">Азов, Главная 45&nbsp;&nbsp;</address>
-        <span class="report__revenue">989.09 рублей</span>
-      </li>
-      <li class="reports__item report">
-        <time class="report__date" datetime="2024-01-23 08:04:57">23-01-2024&nbsp;&nbsp;</time>
-        <span class="report__outlets-name">Пирожок&nbsp;&nbsp;</span>
-        <address class="report__outlets-address">Таганрог, Ленина 10&nbsp;&nbsp;</address>
-        <span class="report__revenue">1056.78 рублей</span>
-      </li>
-      <li class="reports__item report">
-        <time class="report__date" datetime="2024-01-23 06:04:45">23-01-2024&nbsp;&nbsp;</time>
-        <span class="report__outlets-name">ЧИЖИК&nbsp;&nbsp;</span>
-        <address class="report__outlets-address">МОСКВА, Товарная 34&nbsp;&nbsp;</address>
-        <span class="report__revenue">0.5 рублей</span>
-      </li>
-      <li class="reports__item report">
-        <time class="report__date" datetime="2024-03-20 18:05:09">20-03-2024&nbsp;&nbsp;</time>
-        <span class="report__outlets-name">Свежая булка&nbsp;&nbsp;</span>
-        <address class="report__outlets-address">Азов, Главная 45&nbsp;&nbsp;</address>
-        <span class="report__revenue">989.09 рублей</span>
+        <span class="report__revenue">1000 рублей</span>
       </li>
       <li class="reports__item report">
         <time class="report__date" datetime="2024-01-23 08:04:57">23-01-2024&nbsp;&nbsp;</time>
@@ -203,463 +248,28 @@
       </li>
     </ul>
   </main>
-  <main class="page__main manager-update center-fixed" id="update">
-    <h2 class="manager-update__title">Изменить отчеты за текущий месяц.</h2>
-
-    <form class="form form-report" action="/#update" method="post" autocomplete="off">
-      <p class="form-report__item">
-        08-04-2024 </p>
-      <p class="form-report__item">
-        ЧЕТВЕРОЧКА </p>
-      <label class="form-report__item">
-        <input class="form-report__revenue" type="number" name="revenue" step="0.01" placeholder="Выручка" value="125"
-          min="0" required>
-       <span>рублей</span> </label>
-      <button class="form__submit button button--save" type="submit">
-        <span class="button__text text visually-hidden">Обновить</span>
-        <svg class="button__icon">
-          <use xlink:href="img/sprite.svg#save"></use>
-        </svg>
-      </button>
-      <input type="hidden" name="form" value="update">
-      <input type="hidden" name="id" value="15">
-    </form>
-    <form class="form form-report" action="/#update" method="post" autocomplete="off">
-      <p class="form-report__item">
-        04-04-2024 </p>
-      <p class="form-report__item">
-        ЧЕТВЕРОЧКА </p>
-      <label class="form-report__item">
-        <input class="form-report__revenue" type="number" name="revenue" step="0.01" placeholder="Выручка" value="21" min="0"
-          required>
-          <span>рублей</span> </label>
-        <button class="form__submit button button--save" type="submit">
-          <span class="button__text text visually-hidden">Обновить</span>
-          <svg class="button__icon">
-            <use xlink:href="img/sprite.svg#save"></use>
-          </svg>
-        </button>
-      <input type="hidden" name="form" value="update">
-      <input type="hidden" name="id" value="1">
-    </form>
-    <form class="form form-report" action="/#update" method="post" autocomplete="off">
-      <p class="form-report__item">
-        04-04-2024 </p>
-      <p class="form-report__item">
-        ЧИЖИК </p>
-      <label class="form-report__item">
-        <input class="form-report__revenue" type="number" name="revenue" step="0.01" placeholder="Выручка" value="15" min="0"
-          required>
-          <span>рублей</span> </label>
-        <button class="form__submit button button--save" type="submit">
-          <span class="button__text text visually-hidden">Обновить</span>
-          <svg class="button__icon">
-            <use xlink:href="img/sprite.svg#save"></use>
-          </svg>
-        </button>
-      <input type="hidden" name="form" value="update">
-      <input type="hidden" name="id" value="2">
-    </form>
-    <form class="form form-report" action="/#update" method="post" autocomplete="off">
-      <p class="form-report__item">
-        02-04-2024 </p>
-      <p class="form-report__item">
-        Пирожок </p>
-      <label class="form-report__item">
-        <input class="form-report__revenue" type="number" name="revenue" step="0.01" placeholder="Выручка" value="133"
-          min="0" required>
-          <span>рублей</span> </label>
-        <button class="form__submit button button--save" type="submit">
-          <span class="button__text text visually-hidden">Обновить</span>
-          <svg class="button__icon">
-            <use xlink:href="img/sprite.svg#save"></use>
-          </svg>
-        </button>
-      <input type="hidden" name="form" value="update">
-      <input type="hidden" name="id" value="5">
-    </form>
-    <form class="form form-report" action="/#update" method="post" autocomplete="off">
-      <p class="form-report__item">
-        02-04-2024 </p>
-      <p class="form-report__item">
-        Пирожок </p>
-      <label class="form-report__item">
-        <input class="form-report__revenue" type="number" name="revenue" step="0.01" placeholder="Выручка" value="133"
-          min="0" required>
-          <span>рублей</span> </label>
-        <button class="form__submit button button--save" type="submit">
-          <span class="button__text text visually-hidden">Обновить</span>
-          <svg class="button__icon">
-            <use xlink:href="img/sprite.svg#save"></use>
-          </svg>
-        </button>
-      <input type="hidden" name="form" value="update">
-      <input type="hidden" name="id" value="5">
-    </form>
-    <form class="form form-report" action="/#update" method="post" autocomplete="off">
-      <p class="form-report__item">
-        02-04-2024 </p>
-      <p class="form-report__item">
-        Пирожок </p>
-      <label class="form-report__item">
-        <input class="form-report__revenue" type="number" name="revenue" step="0.01" placeholder="Выручка" value="133"
-          min="0" required>
-          <span>рублей</span> </label>
-        <button class="form__submit button button--save" type="submit">
-          <span class="button__text text visually-hidden">Обновить</span>
-          <svg class="button__icon">
-            <use xlink:href="img/sprite.svg#save"></use>
-          </svg>
-        </button>
-      <input type="hidden" name="form" value="update">
-      <input type="hidden" name="id" value="5">
-    </form>
-    <form class="form form-report" action="/#update" method="post" autocomplete="off">
-      <p class="form-report__item">
-        02-04-2024 </p>
-      <p class="form-report__item">
-        Пирожок </p>
-      <label class="form-report__item">
-        <input class="form-report__revenue" type="number" name="revenue" step="0.01" placeholder="Выручка" value="133"
-          min="0" required>
-          <span>рублей</span> </label>
-        <button class="form__submit button button--save" type="submit">
-          <span class="button__text text visually-hidden">Обновить</span>
-          <svg class="button__icon">
-            <use xlink:href="img/sprite.svg#save"></use>
-          </svg>
-        </button>
-      <input type="hidden" name="form" value="update">
-      <input type="hidden" name="id" value="5">
-    </form>
-    <form class="form form-report" action="/#update" method="post" autocomplete="off">
-      <p class="form-report__item">
-        02-04-2024 </p>
-      <p class="form-report__item">
-        Пирожок </p>
-      <label class="form-report__item">
-        <input class="form-report__revenue" type="number" name="revenue" step="0.01" placeholder="Выручка" value="133"
-          min="0" required>
-          <span>рублей</span> </label>
-        <button class="form__submit button button--save" type="submit">
-          <span class="button__text text visually-hidden">Обновить</span>
-          <svg class="button__icon">
-            <use xlink:href="img/sprite.svg#save"></use>
-          </svg>
-        </button>
-      <input type="hidden" name="form" value="update">
-      <input type="hidden" name="id" value="5">
-    </form>
-    <form class="form form-report" action="/#update" method="post" autocomplete="off">
-      <p class="form-report__item">
-        02-04-2024 </p>
-      <p class="form-report__item">
-        Пирожок </p>
-      <label class="form-report__item">
-        <input class="form-report__revenue" type="number" name="revenue" step="0.01" placeholder="Выручка" value="133"
-          min="0" required>
-          <span>рублей</span> </label>
-        <button class="form__submit button button--save" type="submit">
-          <span class="button__text text visually-hidden">Обновить</span>
-          <svg class="button__icon">
-            <use xlink:href="img/sprite.svg#save"></use>
-          </svg>
-        </button>
-      <input type="hidden" name="form" value="update">
-      <input type="hidden" name="id" value="5">
-    </form>
-    <form class="form form-report" action="/#update" method="post" autocomplete="off">
-      <p class="form-report__item">
-        02-04-2024 </p>
-      <p class="form-report__item">
-        Пирожок </p>
-      <label class="form-report__item">
-        <input class="form-report__revenue" type="number" name="revenue" step="0.01" placeholder="Выручка" value="133"
-          min="0" required>
-          <span>рублей</span> </label>
-        <button class="form__submit button button--save" type="submit">
-          <span class="button__text text visually-hidden">Обновить</span>
-          <svg class="button__icon">
-            <use xlink:href="img/sprite.svg#save"></use>
-          </svg>
-        </button>
-      <input type="hidden" name="form" value="update">
-      <input type="hidden" name="id" value="5">
-    </form>
-    <form class="form form-report" action="/#update" method="post" autocomplete="off">
-      <p class="form-report__item">
-        02-04-2024 </p>
-      <p class="form-report__item">
-        Пирожок </p>
-      <label class="form-report__item">
-        <input class="form-report__revenue" type="number" name="revenue" step="0.01" placeholder="Выручка" value="133"
-          min="0" required>
-          <span>рублей</span> </label>
-        <button class="form__submit button button--save" type="submit">
-          <span class="button__text text visually-hidden">Обновить</span>
-          <svg class="button__icon">
-            <use xlink:href="img/sprite.svg#save"></use>
-          </svg>
-        </button>
-      <input type="hidden" name="form" value="update">
-      <input type="hidden" name="id" value="5">
-    </form>
-    <form class="form form-report" action="/#update" method="post" autocomplete="off">
-      <p class="form-report__item">
-        02-04-2024 </p>
-      <p class="form-report__item">
-        Пирожок </p>
-      <label class="form-report__item">
-        <input class="form-report__revenue" type="number" name="revenue" step="0.01" placeholder="Выручка" value="133"
-          min="0" required>
-          <span>рублей</span> </label>
-        <button class="form__submit button button--save" type="submit">
-          <span class="button__text text visually-hidden">Обновить</span>
-          <svg class="button__icon">
-            <use xlink:href="img/sprite.svg#save"></use>
-          </svg>
-        </button>
-      <input type="hidden" name="form" value="update">
-      <input type="hidden" name="id" value="5">
-    </form>
-    <form class="form form-report" action="/#update" method="post" autocomplete="off">
-      <p class="form-report__item">
-        02-04-2024 </p>
-      <p class="form-report__item">
-        Пирожок </p>
-      <label class="form-report__item">
-        <input class="form-report__revenue" type="number" name="revenue" step="0.01" placeholder="Выручка" value="133"
-          min="0" required>
-          <span>рублей</span> </label>
-        <button class="form__submit button button--save" type="submit">
-          <span class="button__text text visually-hidden">Обновить</span>
-          <svg class="button__icon">
-            <use xlink:href="img/sprite.svg#save"></use>
-          </svg>
-        </button>
-      <input type="hidden" name="form" value="update">
-      <input type="hidden" name="id" value="5">
-    </form>
-    <form class="form form-report" action="/#update" method="post" autocomplete="off">
-      <p class="form-report__item">
-        02-04-2024 </p>
-      <p class="form-report__item">
-        Пирожок </p>
-      <label class="form-report__item">
-        <input class="form-report__revenue" type="number" name="revenue" step="0.01" placeholder="Выручка" value="133"
-          min="0" required>
-          <span>рублей</span> </label>
-        <button class="form__submit button button--save" type="submit">
-          <span class="button__text text visually-hidden">Обновить</span>
-          <svg class="button__icon">
-            <use xlink:href="img/sprite.svg#save"></use>
-          </svg>
-        </button>
-      <input type="hidden" name="form" value="update">
-      <input type="hidden" name="id" value="5">
-    </form>
-    <form class="form form-report" action="/#update" method="post" autocomplete="off">
-      <p class="form-report__item">
-        02-04-2024 </p>
-      <p class="form-report__item">
-        Пирожок </p>
-      <label class="form-report__item">
-        <input class="form-report__revenue" type="number" name="revenue" step="0.01" placeholder="Выручка" value="133"
-          min="0" required>
-          <span>рублей</span> </label>
-        <button class="form__submit button button--save" type="submit">
-          <span class="button__text text visually-hidden">Обновить</span>
-          <svg class="button__icon">
-            <use xlink:href="img/sprite.svg#save"></use>
-          </svg>
-        </button>
-      <input type="hidden" name="form" value="update">
-      <input type="hidden" name="id" value="5">
-    </form>
-    <form class="form form-report" action="/#update" method="post" autocomplete="off">
-      <p class="form-report__item">
-        02-04-2024 </p>
-      <p class="form-report__item">
-        Пирожок </p>
-      <label class="form-report__item">
-        <input class="form-report__revenue" type="number" name="revenue" step="0.01" placeholder="Выручка" value="133"
-          min="0" required>
-          <span>рублей</span> </label>
-        <button class="form__submit button button--save" type="submit">
-          <span class="button__text text visually-hidden">Обновить</span>
-          <svg class="button__icon">
-            <use xlink:href="img/sprite.svg#save"></use>
-          </svg>
-        </button>
-      <input type="hidden" name="form" value="update">
-      <input type="hidden" name="id" value="5">
-    </form>
-    <form class="form form-report" action="/#update" method="post" autocomplete="off">
-      <p class="form-report__item">
-        02-04-2024 </p>
-      <p class="form-report__item">
-        Пирожок </p>
-      <label class="form-report__item">
-        <input class="form-report__revenue" type="number" name="revenue" step="0.01" placeholder="Выручка" value="133"
-          min="0" required>
-          <span>рублей</span> </label>
-        <button class="form__submit button button--save" type="submit">
-          <span class="button__text text visually-hidden">Обновить</span>
-          <svg class="button__icon">
-            <use xlink:href="img/sprite.svg#save"></use>
-          </svg>
-        </button>
-      <input type="hidden" name="form" value="update">
-      <input type="hidden" name="id" value="5">
-    </form>
-    <form class="form form-report" action="/#update" method="post" autocomplete="off">
-      <p class="form-report__item">
-        02-04-2024 </p>
-      <p class="form-report__item">
-        Пирожок </p>
-      <label class="form-report__item">
-        <input class="form-report__revenue" type="number" name="revenue" step="0.01" placeholder="Выручка" value="133"
-          min="0" required>
-          <span>рублей</span> </label>
-        <button class="form__submit button button--save" type="submit">
-          <span class="button__text text visually-hidden">Обновить</span>
-          <svg class="button__icon">
-            <use xlink:href="img/sprite.svg#save"></use>
-          </svg>
-        </button>
-      <input type="hidden" name="form" value="update">
-      <input type="hidden" name="id" value="5">
-    </form>
-    <form class="form form-report" action="/#update" method="post" autocomplete="off">
-      <p class="form-report__item">
-        02-04-2024 </p>
-      <p class="form-report__item">
-        Пирожок </p>
-      <label class="form-report__item">
-        <input class="form-report__revenue" type="number" name="revenue" step="0.01" placeholder="Выручка" value="133"
-          min="0" required>
-          <span>рублей</span> </label>
-        <button class="form__submit button button--save" type="submit">
-          <span class="button__text text visually-hidden">Обновить</span>
-          <svg class="button__icon">
-            <use xlink:href="img/sprite.svg#save"></use>
-          </svg>
-        </button>
-      <input type="hidden" name="form" value="update">
-      <input type="hidden" name="id" value="5">
-    </form>
-    <form class="form form-report" action="/#update" method="post" autocomplete="off">
-      <p class="form-report__item">
-        02-04-2024 </p>
-      <p class="form-report__item">
-        Пирожок </p>
-      <label class="form-report__item">
-        <input class="form-report__revenue" type="number" name="revenue" step="0.01" placeholder="Выручка" value="133"
-          min="0" required>
-          <span>рублей</span> </label>
-        <button class="form__submit button button--save" type="submit">
-          <span class="button__text text visually-hidden">Обновить</span>
-          <svg class="button__icon">
-            <use xlink:href="img/sprite.svg#save"></use>
-          </svg>
-        </button>
-      <input type="hidden" name="form" value="update">
-      <input type="hidden" name="id" value="5">
-    </form>
-    <form class="form form-report" action="/#update" method="post" autocomplete="off">
-      <p class="form-report__item">
-        02-04-2024 </p>
-      <p class="form-report__item">
-        Пирожок </p>
-      <label class="form-report__item">
-        <input class="form-report__revenue" type="number" name="revenue" step="0.01" placeholder="Выручка" value="133"
-          min="0" required>
-          <span>рублей</span> </label>
-        <button class="form__submit button button--save" type="submit">
-          <span class="button__text text visually-hidden">Обновить</span>
-          <svg class="button__icon">
-            <use xlink:href="img/sprite.svg#save"></use>
-          </svg>
-        </button>
-      <input type="hidden" name="form" value="update">
-      <input type="hidden" name="id" value="5">
-    </form>
-    <form class="form form-report" action="/#update" method="post" autocomplete="off">
-      <p class="form-report__item">
-        02-04-2024 </p>
-      <p class="form-report__item">
-        Пирожок </p>
-      <label class="form-report__item">
-        <input class="form-report__revenue" type="number" name="revenue" step="0.01" placeholder="Выручка" value="133"
-          min="0" required>
-          <span>рублей</span> </label>
-        <button class="form__submit button button--save" type="submit">
-          <span class="button__text text visually-hidden">Обновить</span>
-          <svg class="button__icon">
-            <use xlink:href="img/sprite.svg#save"></use>
-          </svg>
-        </button>
-      <input type="hidden" name="form" value="update">
-      <input type="hidden" name="id" value="5">
-    </form>
-    <form class="form form-report" action="/#update" method="post" autocomplete="off">
-      <p class="form-report__item">
-        02-04-2024 </p>
-      <p class="form-report__item">
-        Пирожок </p>
-      <label class="form-report__item">
-        <input class="form-report__revenue" type="number" name="revenue" step="0.01" placeholder="Выручка" value="133"
-          min="0" required>
-          <span>рублей</span> </label>
-        <button class="form__submit button button--save" type="submit">
-          <span class="button__text text visually-hidden">Обновить</span>
-          <svg class="button__icon">
-            <use xlink:href="img/sprite.svg#save"></use>
-          </svg>
-        </button>
-      <input type="hidden" name="form" value="update">
-      <input type="hidden" name="id" value="5">
-    </form>
-    <form class="form form-report" action="/#update" method="post" autocomplete="off">
-      <p class="form-report__item">
-        02-04-2024 </p>
-      <p class="form-report__item">
-        Пирожок </p>
-      <label class="form-report__item">
-        <input class="form-report__revenue" type="number" name="revenue" step="0.01" placeholder="Выручка" value="133"
-          min="0" required>
-          <span>рублей</span> </label>
-        <button class="form__submit button button--save" type="submit">
-          <span class="button__text text visually-hidden">Обновить</span>
-          <svg class="button__icon">
-            <use xlink:href="img/sprite.svg#save"></use>
-          </svg>
-        </button>
-      <input type="hidden" name="form" value="update">
-      <input type="hidden" name="id" value="5">
-    </form>
-  </main>
-
   <main class="page__main profile center-fixed" id="lk">
     <div class="profile__wrapper">
       <p class="profile__data">
-        <span>Логин:</span><span>ivan</span></p>
+        <span>Логин:</span><span>admin</span>
+      </p>
       <p class="profile__data">
-        <span>Имя:</span><span>Иван Петров</span></p>
+        <span>Имя:</span><span>Михаил Иванов</span>
+      </p>
       <p class="profile__data">
-        <span>Почта:</span><span>ivan@mail.ru</span></p>
+        <span>Почта:</span><span>asd@dfsa.ru</span>
+      </p>
     </div>
     <form class="form" action="" method="post" autocomplete="off">
       <button class="form__submit button button--close" type="submit">
         <span class="button__text text visually-hidden">Выход</span>
         <svg class="button__icon">
-          <use xlink:href="img/sprite.svg#exit"></use>
+          <use xlink:href="./img/sprite.svg#exit"></use>
         </svg>
       </button>
       <input type="hidden" name="form" value="logout">
     </form>
   </main>
-
   <footer class="page__footer page-footer">
     <div class="page-footer center-flexible">
       <a href="https://work.webpeternet.com/" class="custom-logo-link" rel="home" aria-current="page"><img width="32"
@@ -667,7 +277,7 @@
           alt="work" decoding="async" /></a>
       <p class="page-footer__copyright">
         &copy;work 2024 &nbsp;&nbsp;<em>Вы зашли как:</em>
-        <b> Менеджер</b>
+        <b>&nbsp;Администратор</b>
       </p>
     </div>
   </footer>
