@@ -123,6 +123,11 @@
 
 .form__select {
   text-transform: uppercase;
+  background-color: transparent;
+  background-image: url("../img/select-arrow.svg");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  appearance: none;
 
   &[name=month] {
     text-align: center;
