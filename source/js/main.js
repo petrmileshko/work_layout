@@ -24,4 +24,3 @@ menuMobile({
   activation: 'menu__link--current'
 })();
 
-console.log('Бизнес процессы v1.0');
