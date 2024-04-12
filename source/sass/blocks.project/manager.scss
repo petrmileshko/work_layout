@@ -7,6 +7,17 @@
   max-height: 35vh;
   overflow: scroll;
   overflow-x: hidden;
+  scrollbar-color: $input-form-border transparent;
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    width: 3px;
+    background-color: $input-form-border;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $input-form-border ;
+  }
 
   @media (min-width: $min-tablet) {
     max-height: 55vh;
