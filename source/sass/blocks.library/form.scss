@@ -51,14 +51,14 @@
   width: 100%;
   margin-bottom: 14px;
 
-  span {
+  span:not(.form__input-toggler) {
     margin: 12px 0;
   }
 
   @media (min-width: $min-tablet) {
     margin-bottom: 20px;
 
-    span {
+    span:not(.form__input-toggler) {
       margin: 16px 0;
     }
   }

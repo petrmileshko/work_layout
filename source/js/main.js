@@ -1,6 +1,11 @@
 //import './ui/slider/slider.js';
-import clearNoJs from './utils/utils.js';
+import {
+  clearNoJs,
+  validateEmail,
+  validateLogin
+} from './utils/utils.js';
 import menuMobile from './menu/menu.js';
+import initForm from './form/form.js';
 
 // подготовка элементов шапки сайта для работы когда JS включен и нет сбоя
 clearNoJs(
@@ -24,3 +29,36 @@ menuMobile({
   activation: 'menu__link--current'
 })();
 
+//Инициализация валидатора для login
+const login = new initForm(
+  '#login', {
+    classTo: 'form__label',
+    errorTextParent: 'form__label',
+    errorTextClass: 'form__label--error'
+  }
+);
+
+login.setValidators([{
+  selector: '[name="userlogin"]',
+  cb: validateLogin,
+  message: 'Не допустимые символы! Масимум 35.'
+}]);
+
+//Установка переключения режима скрыто/октрыто для поля ввода пароля
+login.initPassword('form__label--password','form__label--text','form__input-toggler');
+
+
+//Инициализация валидатора для restore
+const restore = new initForm(
+  '#restore', {
+    classTo: 'form__label',
+    errorTextParent: 'form__label',
+    errorTextClass: 'form__label--error'
+  }
+);
+
+restore.setValidators([{
+  selector: '[name="usermail"]',
+  cb: validateEmail,
+  message: 'Укажите правильное имя почты, не более 35 символов!'
+}]);

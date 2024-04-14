@@ -17,269 +17,57 @@
   <link rel="preload" href="./fonts/open-sans-regular.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 
-<body class="page__body page__body--inner">
-  <header class="page__header" id="top">
-    <nav class="navigation center-fixed">
-      <div class="navigation__wrapper">
+<body class="page__body">
+  <main class="page__main index center-fixed">
+    <header class="index__header">
+      <a href="https://work.webpeternet.com/" class="custom-logo-link" rel="home" aria-current="page">
+        <img width="32" height="32" src="https://work.webpeternet.com/wp-content/uploads/2024/03/worklogo.svg"
+          class="custom-logo" alt="work" decoding="async" />
+      </a>
+      <strong class="index__brand">WORKPRO</strong>
+      <h1 class="index__title">Бизнес процессы</h1>
+    </header>
 
-        <a href="https://work.webpeternet.com/" class="custom-logo-link" rel="home" aria-current="page"><img width="32"
-            height="32" src="https://work.webpeternet.com/wp-content/uploads/2024/03/worklogo.svg" class="custom-logo"
-            alt="work" decoding="async" /></a>
 
-        <button class="navigation__button button burger burger--nojs" type="button">
-          <span class="burger__icon">
-            <span class="button__text text visually-hidden">Меню</span>
-          </span>
-        </button>
-      </div>
-
-      <ul class="navigation__menu menu menu--nojs">
-        <li class="menu__item"><a class="menu__link text" href="#reports">Отчеты</a></li>
-        <li class="menu__item"><a class="menu__link text" href="#summary">Сводный</a></li>
-        <li class="menu__item"><a class="menu__link menu__link--current text" href="#lk">ЛК</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main class="page__main admin-summ center-fixed" id="summary">
-    <h2 class="admin-summ__title">Сводный отчет за текущий 2024 год</h2>
-    <form class="form form--sum" action="" method="post" autocomplete="off">
-
-      <label class="form__label form__label--sum">
-        <span>Всего за </span>
-        <select class="form__select" name="month">
-          <option value="all" selected>Все</option>
-          <option value="1">Январь</option>
-          <option value="2">Февраль</option>
-          <option value="3">Март</option>
-          <option value="4">Апрель</option>
-          <option value="5">Май</option>
-          <option value="6">Июнь</option>
-          <option value="7">Июль</option>
-          <option value="8">Август</option>
-          <option value="9">Сентябрь</option>
-          <option value="10">Октябрь</option>
-          <option value="11">Ноябрь</option>
-          <option value="12">Декабрь</option>
-        </select>
-        <span> месяцы</span>
+    <form class="form" action="/" method="post" autocomplete="off" id="login">
+      <p class="form__info">Используйте учетные данные от платформы</p>
+      <label class="form__label">
+        <input class="form__input" type="text" name="userlogin" placeholder="Ваш логин" required>
       </label>
-      <input type="hidden" name="form" value="summary">
-      <button class="form__submit button button--filter" type="submit">
-        <span class="button__text text visually-hidden">Выбрать</span>
-        <svg class="button__icon">
-          <use xlink:href="./img/sprite.svg#select-reports"></use>
-        </svg>
-      </button>
-    </form>
-    <p class="admin-summ__value">
-      Выручка составила: 5879.15 рублей </p>
-  </main>
-  <main class="page__main admin center-fixed" id="reports">
-    <form class="form form--managers" action="" method="post" autocomplete="off">
-
-      <label class="form__label form__label--managers">
-        <span>Менеджер:</span>
-        <select class="form__select" name="user_id">
-          <option value="all">Все</option>
-          <option value="3">Ирина Светлова</option>
-          <option value="2">Иван Петров</option>
-          <option value="5">Василий Алибабаев</option>
-        </select>
+      <label class="form__label form__label--password">
+        <input class="form__input" type="password" name="userpass" placeholder="Ваш пароль" required>
+        <span class="form__input-toggler"></span>
       </label>
+      <button class="form__submit button button--submit" type="submit">
+        <span class="button__text text visually-hidden">Далее</span>
+        <svg class="button__icon">
+          <use xlink:href="img/sprite.svg#login"></use>
+        </svg>
+      </button>
+      <input type="hidden" name="form" value="login">
+      <a class="form__link" href="#restore">Забыли пароль?</a>
+      <p class="form__message form__message--error">
+        Учетные данные отсутсвуют </p>
+    </form>
+    <form class="form form--hidden" action="/" method="post" autocomplete="off" id="restore">
+      <label class="form__label">
+        <p>Выслать новый пароль на:</p>
+        <input class="form__input" type="text" name="usermail" placeholder="Ваша почта" required>
+      </label>
+      <button class="form__submit button button--submit" type="submit">
+        <span class="button__text text visually-hidden">Отправить</span>
+        <svg class="button__icon">
+          <use xlink:href="img/sprite.svg#submit"></use>
+        </svg>
+      </button>
+      <input type="hidden" name="form" value="restore">
+    </form>
+  </main>
 
-      <button class="form__submit button button--filter" type="submit">
-        <span class="button__text text visually-hidden">Выбрать</span>
-        <svg class="button__icon">
-          <use xlink:href="./img/sprite.svg#select-manager"></use>
-        </svg>
-      </button>
-      <input type="hidden" name="form" value="admin">
-    </form>
-    <ul class="manager__reports reports">
-      <li class="reports__item report">
-        <time class="report__date" datetime="2024-04-11 04:04:37">11-04-2024&nbsp;&nbsp;</time>
-        <span class="report__outlets-name">Свежая булка&nbsp;&nbsp;</span>
-        <address class="report__outlets-address">Азов, Главная 45&nbsp;&nbsp;</address>
-        <span class="report__revenue">235.55 рублей</span>
-      </li>
-      <li class="reports__item report">
-        <time class="report__date" datetime="2024-04-10 03:04:39">10-04-2024&nbsp;&nbsp;</time>
-        <span class="report__outlets-name">ЧЕТВЕРОЧКА&nbsp;&nbsp;</span>
-        <address class="report__outlets-address">Таганрог, Чехова 1&nbsp;&nbsp;</address>
-        <span class="report__revenue">500 рублей</span>
-      </li>
-      <li class="reports__item report">
-        <time class="report__date" datetime="2024-04-08 12:04:48">08-04-2024&nbsp;&nbsp;</time>
-        <span class="report__outlets-name">Пирожок&nbsp;&nbsp;</span>
-        <address class="report__outlets-address">Таганрог, Ленина 10&nbsp;&nbsp;</address>
-        <span class="report__revenue">245 рублей</span>
-      </li>
-      <li class="reports__item report">
-        <time class="report__date" datetime="2024-04-08 12:04:07">08-04-2024&nbsp;&nbsp;</time>
-        <span class="report__outlets-name">ЧЕТВЕРОЧКА&nbsp;&nbsp;</span>
-        <address class="report__outlets-address">Таганрог, Чехова 1&nbsp;&nbsp;</address>
-        <span class="report__revenue">110 рублей</span>
-      </li>
-      <li class="reports__item report">
-        <time class="report__date" datetime="2024-04-04 18:06:11">04-04-2024&nbsp;&nbsp;</time>
-        <span class="report__outlets-name">ЧИЖИК&nbsp;&nbsp;</span>
-        <address class="report__outlets-address">МОСКВА, Товарная 34&nbsp;&nbsp;</address>
-        <span class="report__revenue">1092 рубля</span>
-      </li>
-      <li class="reports__item report">
-        <time class="report__date" datetime="2024-04-04 17:53:20">04-04-2024&nbsp;&nbsp;</time>
-        <span class="report__outlets-name">Свежая булка&nbsp;&nbsp;</span>
-        <address class="report__outlets-address">Азов, Главная 45&nbsp;&nbsp;</address>
-        <span class="report__revenue">55 рублей</span>
-      </li>
-      <li class="reports__item report">
-        <time class="report__date" datetime="2024-04-04 17:52:01">04-04-2024&nbsp;&nbsp;</time>
-        <span class="report__outlets-name">ЧЕТВЕРОЧКА&nbsp;&nbsp;</span>
-        <address class="report__outlets-address">Таганрог, Чехова 1&nbsp;&nbsp;</address>
-        <span class="report__revenue">21 рубль</span>
-      </li>
-      <li class="reports__item report">
-        <time class="report__date" datetime="2024-04-04 17:52:01">04-04-2024&nbsp;&nbsp;</time>
-        <span class="report__outlets-name">ЧИЖИК&nbsp;&nbsp;</span>
-        <address class="report__outlets-address">МОСКВА, Товарная 34&nbsp;&nbsp;</address>
-        <span class="report__revenue">15 рублей</span>
-      </li>
-      <li class="reports__item report">
-        <time class="report__date" datetime="2024-04-02 17:57:22">02-04-2024&nbsp;&nbsp;</time>
-        <span class="report__outlets-name">Пирожок&nbsp;&nbsp;</span>
-        <address class="report__outlets-address">Таганрог, Ленина 10&nbsp;&nbsp;</address>
-        <span class="report__revenue">133 рубля</span>
-      </li>
-      <li class="reports__item report">
-        <time class="report__date" datetime="2024-04-01 17:57:22">01-04-2024&nbsp;&nbsp;</time>
-        <span class="report__outlets-name">ЧЕТВЕРОЧКА&nbsp;&nbsp;</span>
-        <address class="report__outlets-address">Таганрог, Чехова 1&nbsp;&nbsp;</address>
-        <span class="report__revenue">200.4 рублей</span>
-      </li>
-      <li class="reports__item report">
-        <time class="report__date" datetime="2024-03-20 18:05:09">20-03-2024&nbsp;&nbsp;</time>
-        <span class="report__outlets-name">Свежая булка&nbsp;&nbsp;</span>
-        <address class="report__outlets-address">Азов, Главная 45&nbsp;&nbsp;</address>
-        <span class="report__revenue">989.09 рублей</span>
-      </li>
-      <li class="reports__item report">
-        <time class="report__date" datetime="2024-03-14 06:04:32">14-03-2024&nbsp;&nbsp;</time>
-        <span class="report__outlets-name">Свежая булка&nbsp;&nbsp;</span>
-        <address class="report__outlets-address">Азов, Главная 45&nbsp;&nbsp;</address>
-        <span class="report__revenue">1 рубль</span>
-      </li>
-      <li class="reports__item report">
-        <time class="report__date" datetime="2024-03-06 18:05:09">06-03-2024&nbsp;&nbsp;</time>
-        <span class="report__outlets-name">ЧИЖИК&nbsp;&nbsp;</span>
-        <address class="report__outlets-address">МОСКВА, Товарная 34&nbsp;&nbsp;</address>
-        <span class="report__revenue">204.33 рубля</span>
-      </li>
-      <li class="reports__item report">
-        <time class="report__date" datetime="2024-02-15 17:53:20">15-02-2024&nbsp;&nbsp;</time>
-        <span class="report__outlets-name">Пирожок&nbsp;&nbsp;</span>
-        <address class="report__outlets-address">Таганрог, Ленина 10&nbsp;&nbsp;</address>
-        <span class="report__revenue">20.5 рублей</span>
-      </li>
-      <li class="reports__item report">
-        <time class="report__date" datetime="2024-02-15 10:04:22">15-02-2024&nbsp;&nbsp;</time>
-        <span class="report__outlets-name">ЧИЖИК&nbsp;&nbsp;</span>
-        <address class="report__outlets-address">МОСКВА, Товарная 34&nbsp;&nbsp;</address>
-        <span class="report__revenue">1000 рублей</span>
-      </li>
-      <li class="reports__item report">
-        <time class="report__date" datetime="2024-01-23 08:04:57">23-01-2024&nbsp;&nbsp;</time>
-        <span class="report__outlets-name">Пирожок&nbsp;&nbsp;</span>
-        <address class="report__outlets-address">Таганрог, Ленина 10&nbsp;&nbsp;</address>
-        <span class="report__revenue">1056.78 рублей</span>
-      </li>
-      <li class="reports__item report">
-        <time class="report__date" datetime="2024-01-23 06:04:45">23-01-2024&nbsp;&nbsp;</time>
-        <span class="report__outlets-name">ЧИЖИК&nbsp;&nbsp;</span>
-        <address class="report__outlets-address">МОСКВА, Товарная 34&nbsp;&nbsp;</address>
-        <span class="report__revenue">0.5 рублей</span>
-      </li>
-      <li class="reports__item report">
-        <time class="report__date" datetime="2024-02-15 17:53:20">15-02-2024&nbsp;&nbsp;</time>
-        <span class="report__outlets-name">Пирожок&nbsp;&nbsp;</span>
-        <address class="report__outlets-address">Таганрог, Ленина 10&nbsp;&nbsp;</address>
-        <span class="report__revenue">20.5 рублей</span>
-      </li>
-      <li class="reports__item report">
-        <time class="report__date" datetime="2024-02-15 10:04:22">15-02-2024&nbsp;&nbsp;</time>
-        <span class="report__outlets-name">ЧИЖИК&nbsp;&nbsp;</span>
-        <address class="report__outlets-address">МОСКВА, Товарная 34&nbsp;&nbsp;</address>
-        <span class="report__revenue">1000 рублей</span>
-      </li>
-      <li class="reports__item report">
-        <time class="report__date" datetime="2024-01-23 08:04:57">23-01-2024&nbsp;&nbsp;</time>
-        <span class="report__outlets-name">Пирожок&nbsp;&nbsp;</span>
-        <address class="report__outlets-address">Таганрог, Ленина 10&nbsp;&nbsp;</address>
-        <span class="report__revenue">1056.78 рублей</span>
-      </li>
-      <li class="reports__item report">
-        <time class="report__date" datetime="2024-01-23 06:04:45">23-01-2024&nbsp;&nbsp;</time>
-        <span class="report__outlets-name">ЧИЖИК&nbsp;&nbsp;</span>
-        <address class="report__outlets-address">МОСКВА, Товарная 34&nbsp;&nbsp;</address>
-        <span class="report__revenue">0.5 рублей</span>
-      </li>
-      <li class="reports__item report">
-        <time class="report__date" datetime="2024-02-15 17:53:20">15-02-2024&nbsp;&nbsp;</time>
-        <span class="report__outlets-name">Пирожок&nbsp;&nbsp;</span>
-        <address class="report__outlets-address">Таганрог, Ленина 10&nbsp;&nbsp;</address>
-        <span class="report__revenue">20.5 рублей</span>
-      </li>
-      <li class="reports__item report">
-        <time class="report__date" datetime="2024-02-15 10:04:22">15-02-2024&nbsp;&nbsp;</time>
-        <span class="report__outlets-name">ЧИЖИК&nbsp;&nbsp;</span>
-        <address class="report__outlets-address">МОСКВА, Товарная 34&nbsp;&nbsp;</address>
-        <span class="report__revenue">1000 рублей</span>
-      </li>
-      <li class="reports__item report">
-        <time class="report__date" datetime="2024-01-23 08:04:57">23-01-2024&nbsp;&nbsp;</time>
-        <span class="report__outlets-name">Пирожок&nbsp;&nbsp;</span>
-        <address class="report__outlets-address">Таганрог, Ленина 10&nbsp;&nbsp;</address>
-        <span class="report__revenue">1056.78 рублей</span>
-      </li>
-      <li class="reports__item report">
-        <time class="report__date" datetime="2024-01-23 06:04:45">23-01-2024&nbsp;&nbsp;</time>
-        <span class="report__outlets-name">ЧИЖИК&nbsp;&nbsp;</span>
-        <address class="report__outlets-address">МОСКВА, Товарная 34&nbsp;&nbsp;</address>
-        <span class="report__revenue">0.5 рублей</span>
-      </li>
-    </ul>
-  </main>
-  <main class="page__main profile center-fixed" id="lk">
-    <div class="profile__wrapper">
-      <p class="profile__data">
-        <span>Логин:</span><span>admin</span>
-      </p>
-      <p class="profile__data">
-        <span>Имя:</span><span>Михаил Иванов</span>
-      </p>
-      <p class="profile__data">
-        <span>Почта:</span><span>asd@dfsa.ru</span>
-      </p>
-    </div>
-    <form class="form" action="" method="post" autocomplete="off">
-      <button class="form__submit button button--close" type="submit">
-        <span class="button__text text visually-hidden">Выход</span>
-        <svg class="button__icon">
-          <use xlink:href="./img/sprite.svg#exit"></use>
-        </svg>
-      </button>
-      <input type="hidden" name="form" value="logout">
-    </form>
-  </main>
-  <footer class="page__footer page-footer">
-    <div class="page-footer center-flexible">
-      <a href="https://work.webpeternet.com/" class="custom-logo-link" rel="home" aria-current="page"><img width="32"
-          height="32" src="https://work.webpeternet.com/wp-content/uploads/2024/03/worklogo.svg" class="custom-logo"
-          alt="work" decoding="async" /></a>
-      <p class="page-footer__copyright">
-        &copy;work 2024 &nbsp;&nbsp;<em>Вы зашли как:</em>
-        <b>&nbsp;Администратор</b>
-      </p>
-    </div>
+  <footer class="page__footer page-footer center-fixed">
+    <p class="page-footer__copyright">
+      &copy;work 2024 <em>&nbsp;&nbsp;Приложение в стадии разработки</em>
+    </p>
   </footer>
   <script src="./js/app.min.js?ver=1.0.0"></script>
 </body>

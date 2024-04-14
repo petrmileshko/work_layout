@@ -9,8 +9,8 @@ function menuMobile(container, menu, control, item) {
   const containerElement = document.querySelector(container.element);
   const menuElement = document.querySelector(menu.element);
   const controlElement = document.querySelector(control.element);
-  const menuItems = menuElement.querySelectorAll(`.${item.element}`);
-  let menuItemCurrent = menuElement.querySelector(`.${item.activation}`);
+  const menuItems = menuElement !== null ? menuElement.querySelectorAll(`.${item.element}`) : null;
+  let menuItemCurrent = menuElement !== null ? menuElement.querySelector(`.${item.activation}`) : null;
 
   return function () {
     if (containerElement !== null && menuElement !== null && controlElement !== null && menuItems.length && menuItemCurrent !== null) {
